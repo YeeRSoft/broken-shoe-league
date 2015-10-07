@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokenShoeLeague.Domain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokenShoeLeague.Services", "BrokenShoeLeague.Services\BrokenShoeLeague.Services.csproj", "{2BED94C6-06AE-4867-9B5F-F3CCD99A0F24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokenShoeLeague.API", "BrokenShoeLeague.API\BrokenShoeLeague.API.csproj", "{4D4E41B2-B727-4E08-84DC-75ADA1236046}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2BED94C6-06AE-4867-9B5F-F3CCD99A0F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BED94C6-06AE-4867-9B5F-F3CCD99A0F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BED94C6-06AE-4867-9B5F-F3CCD99A0F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D4E41B2-B727-4E08-84DC-75ADA1236046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D4E41B2-B727-4E08-84DC-75ADA1236046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D4E41B2-B727-4E08-84DC-75ADA1236046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D4E41B2-B727-4E08-84DC-75ADA1236046}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

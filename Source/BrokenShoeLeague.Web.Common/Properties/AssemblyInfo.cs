@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BrokenShoeLeague.Tests")]
+[assembly: AssemblyTitle("BrokenShoeLeague.Web.Common")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BrokenShoeLeague.Tests")]
+[assembly: AssemblyProduct("BrokenShoeLeague.Web.Common")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d0dae738-405c-4ce3-94e7-64d23a278db9")]
+[assembly: Guid("b007fe5f-92cd-4867-b505-67753ac4a944")]
 
 // Version information for an assembly consists of the following four values:
 //

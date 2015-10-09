@@ -48,13 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Achievment.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="ImageCarousel.cs" />
     <Compile Include="MatchDay.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ILigaDelTenisRotoRepository.cs" />
+    <Compile Include="Repositories\IBrokenShoeLeagueContext.cs" />
     <Compile Include="Season.cs" />
     <Compile Include="UserProfile.cs" />
     <Compile Include="Utils.cs" />

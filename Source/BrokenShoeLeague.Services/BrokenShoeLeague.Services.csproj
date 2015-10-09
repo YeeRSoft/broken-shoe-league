@@ -41,6 +41,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BrokenShoeLeague.Data\BrokenShoeLeague.Data.csproj">
+      <Project>{7864cd98-4c9f-470e-a75f-dcff7a495c11}</Project>
+      <Name>BrokenShoeLeague.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrokenShoeLeague.Domain\BrokenShoeLeague.Domain.csproj">
+      <Project>{0e9da317-69cd-4cbd-8bc3-d000fb4968ec}</Project>
+      <Name>BrokenShoeLeague.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

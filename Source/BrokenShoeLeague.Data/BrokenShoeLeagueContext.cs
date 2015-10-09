@@ -6,9 +6,9 @@ using BrokenShoeLeague.Domain.Repositories;
 
 namespace BrokenShoeLeague.Data
 {
-    public class LigaDelTenisRotoContext : DbContext, ILigaDelTenisRotoRepository
+    public class BrokenShoeLeagueContext : DbContext, IBrokenShoeLeagueContext
     {
-        public LigaDelTenisRotoContext()
+        public BrokenShoeLeagueContext()
             : base("DefaultConnection")
         {
         }
@@ -16,6 +16,7 @@ namespace BrokenShoeLeague.Data
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<MatchDay> MatchDays { get; set; }
         public DbSet<Player> Players { get; set; }
+        public DbSet<Achievment> Achievments { get; set; }
         public DbSet<Season> Seasons { get; set; }
         public DbSet<PlayerRecord> PlayerRecords { get; set; }
         public DbSet<ImageCarousel> ImageCarousels { get; set; }
@@ -185,7 +186,7 @@ namespace BrokenShoeLeague.Data
             SaveChanges();
         }
 
-        void ILigaDelTenisRotoRepository.SaveChanges()
+        void IBrokenShoeLeagueContext.SaveChanges()
         {
             SaveChanges();
         }

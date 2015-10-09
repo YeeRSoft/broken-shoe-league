@@ -4,7 +4,7 @@ namespace BrokenShoeLeague.Data.Repositories
 {
     public class BaseRepository : IDisposable
     {
-        protected LigaDelTenisRotoContext Context { get; set; }
+        protected BrokenShoeLeagueContext Context { get; set; }
 
         public void Dispose()
         {

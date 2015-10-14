@@ -1,4 +1,6 @@
+using System.Web.Security;
 using BrokenShoeLeague.Domain;
+using WebMatrix.WebData;
 
 namespace BrokenShoeLeague.Data.Migrations
 {
@@ -17,18 +19,39 @@ namespace BrokenShoeLeague.Data.Migrations
 
         protected override void Seed(BrokenShoeLeagueContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            if (!WebSecurity.Initialized)
+            {
+                WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+            }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            context.Players.AddOrUpdate(
-              p => p.Name,
-              new Player { Name = "Player1", Enabled = true},
-              new Player { Name = "Player2", Enabled = true},
-              new Player { Name = "Player3", Enabled = true}
-            );
-            //
+            #region Users & Roles
+
+            if (!Roles.RoleExists("Administrator"))
+                Roles.CreateRole("Administrator");
+
+            if (!Roles.RoleExists("Guest"))
+                Roles.CreateRole("Guest");
+
+            if (!Roles.RoleExists("StatsEditor"))
+                Roles.CreateRole("StatsEditor");
+
+            if (!WebSecurity.UserExists("admin"))
+            {
+                WebSecurity.CreateUserAndAccount("admin", "HalaMadrid", new { Email = "yoliva0201@gmail.com", Role = "Administrator", ConfirmationLink = true, NotificationsByEmail = true });
+            }
+
+            if (!Roles.GetRolesForUser("admin").Contains("Administrator"))
+            {
+                Roles.AddUsersToRoles(new[] { "admin" }, new[] { "Administrator" });
+            }
+            #endregion
+
+            context.MatchDays.Add(new MatchDay()
+            {
+                Date = DateTime.Now,
+                Number = 1
+            });
+            context.SaveChanges();
         }
     }
 }

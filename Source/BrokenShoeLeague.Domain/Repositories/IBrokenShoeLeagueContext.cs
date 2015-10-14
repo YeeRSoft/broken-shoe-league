@@ -10,32 +10,35 @@ namespace BrokenShoeLeague.Domain.Repositories
         Season GetSeasonById(int id);
         void RemoveSeason(Season season);
         IQueryable<Season> GetAllSeasons();
+        void UpdateSeason(Season season);
+
 
         //Player
-        void InsertPlayer(Player newPlayer);
+        void CreatePlayer(Player newPlayer);
         Player GetPlayerById(int id);
         void RemovePlayer(Player player);
         IQueryable<Player> GetAllPlayers();
+        void UpdatePlayer(Player player);
+
 
         //ImageCarousel
-        void InsertImageCarousel(ImageCarousel imageCarousel);
-        ImageCarousel GetImageById(int id);
-        void RemoveCarouselImage(ImageCarousel imageCarousel);
-        IQueryable<ImageCarousel> GetAllCarouselImages();
+        void CreateImageCarousel(ImageCarousel imageCarousel);
+        ImageCarousel GetImageCarouselById(int id);
+        void RemoveImageCarousel(ImageCarousel imageCarousel);
+        IQueryable<ImageCarousel> GetAllImageCarousel();
 
         //MatchDays
-        void InsertMatchDay(MatchDay matchDay);
+        void CreateMatchDay(MatchDay matchDay);
         MatchDay GetMatchDayById(int id);
         void RemoveMatchDay(MatchDay matchDay);
-        IQueryable<MatchDay> GetAllMatchDay();
+        IQueryable<MatchDay> GetAllMatchDays();
         void AddPlayerToMatchDay(MatchDay matchDay, int playerId);
 
         //PlayerRecords
-        void InsertPlayerRecord(PlayerRecord playerRecord);
+        void CreatePlayerRecord(PlayerRecord playerRecord);
         PlayerRecord GetPlayerRecordById(int id);
         void RemovePlayerRecord(PlayerRecord playerRecord);
-        IQueryable<PlayerRecord> GetAllPlayerRecord();
-        void UpdatePlayer(Player player);
+        IQueryable<PlayerRecord> GetAllPlayerRecords();
         void UpdatePlayerRecord(int playerRecordId, PlayerRecord data);
 
         //transaction manager

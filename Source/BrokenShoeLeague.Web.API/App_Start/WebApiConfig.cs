@@ -17,6 +17,7 @@ namespace BrokenShoeLeague.Web.API
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -25,6 +26,8 @@ namespace BrokenShoeLeague.Web.API
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.DependencyResolver = new CustomResolver();
         }
     }
 }

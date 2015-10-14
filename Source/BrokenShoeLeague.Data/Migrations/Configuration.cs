@@ -1,3 +1,5 @@
+using BrokenShoeLeague.Domain;
+
 namespace BrokenShoeLeague.Data.Migrations
 {
     using System;
@@ -5,7 +7,7 @@ namespace BrokenShoeLeague.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BrokenShoeLeague.Data.BrokenShoeLeagueContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<BrokenShoeLeagueContext>
     {
         public Configuration()
         {
@@ -13,19 +15,19 @@ namespace BrokenShoeLeague.Data.Migrations
             AutomaticMigrationDataLossAllowed = false;
         }
 
-        protected override void Seed(BrokenShoeLeague.Data.BrokenShoeLeagueContext context)
+        protected override void Seed(BrokenShoeLeagueContext context)
         {
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
+            context.Players.AddOrUpdate(
+              p => p.Name,
+              new Player { Name = "Player1", Enabled = true},
+              new Player { Name = "Player2", Enabled = true},
+              new Player { Name = "Player3", Enabled = true}
+            );
             //
         }
     }

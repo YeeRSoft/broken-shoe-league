@@ -45,12 +45,16 @@ namespace BrokenShoeLeague.Data
             return Seasons.AsQueryable();
         }
 
-        #endregion
+        public void UpdateSeason(Season season)
+        {
+            throw new NotImplementedException();
+        }
 
+        #endregion
 
         #region Players
 
-        public void InsertPlayer(Player newPlayer)
+        public void CreatePlayer(Player newPlayer)
         {
             newPlayer.ImageProfileUrl = "~/Content/Images/_defaultPlayer.png";
             Players.Add(newPlayer);
@@ -85,23 +89,23 @@ namespace BrokenShoeLeague.Data
 
         #region ImageCarousel
 
-        public void InsertImageCarousel(ImageCarousel imageCarousel)
+        public void CreateImageCarousel(ImageCarousel imageCarousel)
         {
             ImageCarousels.Add(imageCarousel);
             SaveChanges();
         }
 
-        public ImageCarousel GetImageById(int id)
+        public ImageCarousel GetImageCarouselById(int id)
         {
             return ImageCarousels.Find(id);
         }
 
-        public void RemoveCarouselImage(ImageCarousel imageCarousel)
+        public void RemoveImageCarousel(ImageCarousel imageCarousel)
         {
             ImageCarousels.Remove(imageCarousel);
         }
 
-        public IQueryable<ImageCarousel> GetAllCarouselImages()
+        public IQueryable<ImageCarousel> GetAllImageCarousel()
         {
             return ImageCarousels;
         }
@@ -118,7 +122,7 @@ namespace BrokenShoeLeague.Data
 
         #region MatchDay
 
-        public void InsertMatchDay(MatchDay matchDay)
+        public void CreateMatchDay(MatchDay matchDay)
         {
             MatchDays.Add(matchDay);
             SaveChanges();
@@ -134,7 +138,7 @@ namespace BrokenShoeLeague.Data
             MatchDays.Remove(matchDay);
         }
 
-        public IQueryable<MatchDay> GetAllMatchDay()
+        public IQueryable<MatchDay> GetAllMatchDays()
         {
             return MatchDays;
         }
@@ -151,7 +155,7 @@ namespace BrokenShoeLeague.Data
 
         #region PlayerRecord
 
-        public void InsertPlayerRecord(PlayerRecord playerRecord)
+        public void CreatePlayerRecord(PlayerRecord playerRecord)
         {
             PlayerRecords.Add(playerRecord);
             SaveChanges();
@@ -168,7 +172,7 @@ namespace BrokenShoeLeague.Data
             SaveChanges();
         }
 
-        public IQueryable<PlayerRecord> GetAllPlayerRecord()
+        public IQueryable<PlayerRecord> GetAllPlayerRecords()
         {
             return PlayerRecords;
         }

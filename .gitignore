@@ -19,3 +19,4 @@ obj/
 _ReSharper*/
 Libraries/
 App_Data/
+bower_components/

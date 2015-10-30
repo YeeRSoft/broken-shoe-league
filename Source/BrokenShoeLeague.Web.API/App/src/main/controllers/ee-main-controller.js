@@ -5,7 +5,7 @@
 
     eeMainController.$inject = ['$mdSidenav', '$location'];
 
-    function eeMainController() {
+    function eeMainController($mdSidenav, $location) {
         var vm = this;
 
         vm.go = function (url) { $location.path(url); }

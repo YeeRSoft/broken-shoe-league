@@ -1,1 +1,30 @@
-﻿
+﻿html, body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Sidenav area */
+
+md-list .md-button {
+    color: inherit;
+    font-weight: 500;
+    text-align: left;
+    width: 100%;
+}
+
+    md-list .md-button.selected {
+        color: #03a9f4;
+    }
+
+md-sidenav md-list {
+    padding: 0px 0px 8px 0px;
+}
+
+/* Utils */
+
+.content-wrapper {
+    position: relative;
+}

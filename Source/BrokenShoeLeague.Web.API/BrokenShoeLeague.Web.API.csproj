@@ -198,6 +198,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\src\main\broken-shoe-league.js" />
+    <Content Include="App\src\main\controllers\ee-main-controller.js" />
     <Content Include="App\src\styles\site.css" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="favicon.ico" />

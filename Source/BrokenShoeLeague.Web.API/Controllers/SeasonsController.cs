@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Data.Entity.Infrastructure;
 using System.Web.Http;
 using BrokenShoeLeague.Domain;
 using BrokenShoeLeague.Domain.Repositories;
@@ -12,24 +7,23 @@ namespace BrokenShoeLeague.Web.API.Controllers
 {
     public class SeasonsController : ApiController
     {
-                private readonly IBrokenShoeLeagueContext _brokenShoeLeagueContext;
+        private readonly IBrokenShoeLeagueRepository _brokenShoeLeagueRepository;
 
-        public SeasonsController()
+        public SeasonsController(IBrokenShoeLeagueRepository brokenShoeLeagueRepository)
         {
-            _brokenShoeLeagueContext = (IBrokenShoeLeagueContext) GlobalConfiguration.Configuration.
-                DependencyResolver.GetService(typeof (IBrokenShoeLeagueContext));
+            _brokenShoeLeagueRepository = brokenShoeLeagueRepository;
         }
 
         // GET api/seasons
         public IHttpActionResult GetSeasons()
         {
-            return Ok(_brokenShoeLeagueContext.GetAllSeasons());
+            return Ok(_brokenShoeLeagueRepository.GetAllSeasons());
         }
 
         // GET api/players/5
         public IHttpActionResult GetSeason(int id)
         {
-            var season = _brokenShoeLeagueContext.GetSeasonById(id);
+            var season = _brokenShoeLeagueRepository.GetSeasonById(id);
             if (season == null)
             {
                 return NotFound();
@@ -43,22 +37,22 @@ namespace BrokenShoeLeague.Web.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            _brokenShoeLeagueContext.CreateSeason(season);
-            _brokenShoeLeagueContext.SaveChanges();
+            _brokenShoeLeagueRepository.CreateSeason(season);
+            _brokenShoeLeagueRepository.SaveChanges();
             return Ok(season);
         }
 
         // PUT api/players/5
         public IHttpActionResult Put([FromUri]int id, [FromBody]Season season)
         {
-            var currentPlayer = _brokenShoeLeagueContext.GetPlayerById(id);
+            var currentPlayer = _brokenShoeLeagueRepository.GetPlayerById(id);
             if (ModelState.IsValid && currentPlayer != null)
             {
                 try
                 {
                     season.Id = id;
-                    _brokenShoeLeagueContext.UpdateSeason(season);
-                    _brokenShoeLeagueContext.SaveChanges();
+                    _brokenShoeLeagueRepository.UpdateSeason(season);
+                    _brokenShoeLeagueRepository.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -75,13 +69,13 @@ namespace BrokenShoeLeague.Web.API.Controllers
         // DELETE api/players/5
         public IHttpActionResult Delete(int id)
         {
-            var season = _brokenShoeLeagueContext.GetSeasonById(id);
+            var season = _brokenShoeLeagueRepository.GetSeasonById(id);
             if (season == null)
                 return NotFound();
-            _brokenShoeLeagueContext.RemoveSeason(season);
+            _brokenShoeLeagueRepository.RemoveSeason(season);
             try
             {
-                _brokenShoeLeagueContext.SaveChanges();
+                _brokenShoeLeagueRepository.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {

@@ -55,7 +55,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="PlayerRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IBrokenShoeLeagueContext.cs" />
+    <Compile Include="Repositories\IBrokenShoeLeagueRepository.cs" />
     <Compile Include="Season.cs" />
     <Compile Include="UserProfile.cs" />
     <Compile Include="Utils.cs" />

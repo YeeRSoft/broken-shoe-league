@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace BrokenShoeLeague.Domain.Repositories
 {
-    public interface IBrokenShoeLeagueContext
+    public interface IBrokenShoeLeagueRepository
     {
         //Seasons
         void CreateSeason(Season season);

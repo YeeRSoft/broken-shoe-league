@@ -6,7 +6,7 @@ using BrokenShoeLeague.Domain.Repositories;
 
 namespace BrokenShoeLeague.Data
 {
-    public class BrokenShoeLeagueContext : DbContext, IBrokenShoeLeagueContext
+    public class BrokenShoeLeagueContext : DbContext, IBrokenShoeLeagueRepository
     {
         public BrokenShoeLeagueContext()
             : base("DefaultConnection")
@@ -190,7 +190,7 @@ namespace BrokenShoeLeague.Data
             SaveChanges();
         }
 
-        void IBrokenShoeLeagueContext.SaveChanges()
+        void IBrokenShoeLeagueRepository.SaveChanges()
         {
             SaveChanges();
         }

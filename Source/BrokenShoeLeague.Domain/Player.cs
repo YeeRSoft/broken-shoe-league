@@ -24,10 +24,11 @@ namespace BrokenShoeLeague.Domain
                 return PlayerRecords.Count(pRecord => pRecord.Performance == pRecord.MatchDay.TopPerformance);
             }
         }
-        public double Performance
+        public double CalculatePerformance(int seasonId = 0)
         {
-            get { return Utils.CalculatePerformance(this); }
+            return Utils.CalculatePerformance(seasonId <= 0 ? PlayerRecords : PlayerRecords.Where(x => x.MatchDay.Season.Id == seasonId));
         }
+
         public int MVPs
         {
             get

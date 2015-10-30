@@ -9,19 +9,19 @@
     <link rel="stylesheet" href="~/bower_components/angular-material/angular-material.css" />
     <link rel="stylesheet" href="~/App/src/styles/site.css" />
 </head>
-<body ng-controller="eeMainController as mainCtrl">
+<body layout="row" ng-controller="eeMainController as mainCtrl">
     <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
                 md-component-id="left-sidenav"
                 md-is-locked-open="$mdMedia('gt-sm')">
 
         <md-toolbar class="md-tall md-hue-2">
             <span flex></span>
-            <div layout="column" layout-align="center center" class="md-toolbar-tools-bottom inset">                
+            <div layout="column" layout-align="center center" class="md-toolbar-tools-bottom inset">
                 <span></span>
             </div>
         </md-toolbar>
         <md-list>
-            <span ng-repeat="item in mainCtrl.menu">
+            <span ng-repeat="item in mainCtrl.sideNavItems">
                 <md-subheader>{{item.name}}</md-subheader>
                 <md-list-item ng-repeat="subitem in item.items">
                     <md-button ng-click="mainCtrl.go(subitem.url)">
@@ -41,7 +41,7 @@
             <md-button class="menu" hide-gt-sm ng-click="mainCtrl.toggleSidenav('left-sidenav')" aria-label="Show Menu">
                 <ng-md-icon icon="menu"></ng-md-icon>
             </md-button>
-            <h1 class="md-headline">Game of Drones</h1>
+            <h1 class="md-headline"></h1>
         </md-toolbar>
 
         <ng-view></ng-view>

@@ -164,6 +164,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PlayersController.cs" />
+    <Compile Include="Controllers\SeasonsController.cs" />
+    <Compile Include="Controllers\StatsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,6 +206,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bower.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BrokenShoeLeague.Data\BrokenShoeLeague.Data.csproj">
+      <Project>{7864cd98-4c9f-470e-a75f-dcff7a495c11}</Project>
+      <Name>BrokenShoeLeague.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrokenShoeLeague.Domain\BrokenShoeLeague.Domain.csproj">
+      <Project>{0e9da317-69cd-4cbd-8bc3-d000fb4968ec}</Project>
+      <Name>BrokenShoeLeague.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrokenShoeLeague.Services\BrokenShoeLeague.Services.csproj">
+      <Project>{2bed94c6-06ae-4867-9b5f-f3ccd99a0f24}</Project>
+      <Name>BrokenShoeLeague.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrokenShoeLeague.Web.Common\BrokenShoeLeague.Web.Common.csproj">
+      <Project>{304831fe-7d17-4b8d-81de-333222493d40}</Project>
+      <Name>BrokenShoeLeague.Web.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

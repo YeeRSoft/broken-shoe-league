@@ -31,6 +31,11 @@ namespace BrokenShoeLeague.Web.API.Areas.HelpPage
             _documentNavigator = xpath.CreateNavigator();
         }
 
+        public string GetDocumentation(HttpControllerDescriptor controllerDescriptor)
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual string GetDocumentation(HttpActionDescriptor actionDescriptor)
         {
             XPathNavigator methodNode = GetMethodNode(actionDescriptor);
@@ -64,6 +69,11 @@ namespace BrokenShoeLeague.Web.API.Areas.HelpPage
             }
 
             return null;
+        }
+
+        public string GetResponseDocumentation(HttpActionDescriptor actionDescriptor)
+        {
+            throw new NotImplementedException();
         }
 
         private XPathNavigator GetMethodNode(HttpActionDescriptor actionDescriptor)

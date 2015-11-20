@@ -45,10 +45,14 @@ namespace BrokenShoeLeague.Data.Migrations
             }
             #endregion
 
-            context.MatchDays.Add(new MatchDay()
+            context.MatchDays.AddOrUpdate(x=>x.Number, new MatchDay()
             {
                 Date = DateTime.Now,
-                Number = 1
+                Number = 1,
+                Season = new Season()
+                {
+                    Name = "Season1"
+                }
             });
             context.SaveChanges();
         }

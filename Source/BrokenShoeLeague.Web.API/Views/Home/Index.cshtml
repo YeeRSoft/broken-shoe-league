@@ -1,45 +1,61 @@
-﻿<div id="body">
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>Welcome to ASP.NET Web API!</h1>
-                <h2>Modify the code in this template to jump-start your ASP.NET Web API development.</h2>
-            </hgroup>
-            <p>
-                ASP.NET Web API allows you to expose your applications, data and services to the
-                web directly over HTTP.
-            </p>
-            <p>
-                To learn more about ASP.NET Web API visit the
-                <a href="http://go.microsoft.com/fwlink/?LinkID=238195" title="ASP.NET Web API Website">ASP.NET Web API Website</a>.
-                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET Web API.
-                If you have any questions about ASP.NET Web API, visit
-                <a href="http://go.microsoft.com/fwlink/?LinkID=238196" title="ASP.NET Web API Forum">our forums</a>.
-            </p>
-        </div>
-    </section>
-    <section class="content-wrapper main-content clear-fix">
-        <h3>We suggest the following steps:</h3>
-        <ol class="round">
-            <li class="one">
-                <h5>Getting Started</h5>
-                ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-                a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-                is an ideal platform for building RESTful applications on the .NET Framework.
-                <a href="http://go.microsoft.com/fwlink/?LinkId=245160">Learn more…</a>
-            </li>
+﻿<!DOCTYPE html>
+<html ng-app="eeBrokenShoeLeague">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
 
-            <li class="two">
-                <h5>Add NuGet packages and jump-start your coding</h5>
-                NuGet makes it easy to install and update free libraries and tools.
-                <a href="http://go.microsoft.com/fwlink/?LinkId=245161">Learn more…</a>
-            </li>
-            <li class="three">
-                <h5>Find Web Hosting</h5>
-                You can easily find a web hosting company that offers the right mix of features
-                and price for your applications.
-                <a href="http://go.microsoft.com/fwlink/?LinkId=245164">Learn more…</a>
-            </li>
-        </ol>
-    </section>
-</div>
+    <title>Broken Shoe League</title>
+
+    <link rel="stylesheet" href="~/bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="~/App/src/styles/site.css" />
+</head>
+<body layout="row" ng-controller="eeMainController as mainCtrl">
+    <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+                md-component-id="left-sidenav"
+                md-is-locked-open="$mdMedia('gt-sm')">
+
+        <md-toolbar class="md-tall md-hue-2">
+            <span flex></span>
+            <div layout="column" layout-align="center center" class="md-toolbar-tools-bottom inset">
+                <span></span>
+            </div>
+        </md-toolbar>
+        <md-list>
+            <span ng-repeat="item in mainCtrl.sideNavItems">
+                <md-subheader>{{item.name}}</md-subheader>
+                <md-list-item ng-repeat="subitem in item.items">
+                    <md-button ng-click="mainCtrl.go(subitem.url)">
+                        <ng-md-icon icon="{{subitem.icon}}">
+                        </ng-md-icon>
+                        {{subitem.name}}
+                    </md-button>
+                </md-list-item>
+                <md-divider ng-if="!$last"></md-divider>
+            </span>
+        </md-list>
+    </md-sidenav>
+
+    <div flex layout="column" tabindex="-1" role="main" class="md-whiteframe-z2">
+
+        <md-toolbar layout="row" layout-align="center center" class="md-whiteframe-z1">
+            <md-button class="menu" hide-gt-sm ng-click="mainCtrl.toggleSidenav('left-sidenav')" aria-label="Show Menu">
+                <ng-md-icon icon="menu"></ng-md-icon>
+            </md-button>
+            <h1 class="md-headline"></h1>
+        </md-toolbar>
+
+        <ng-view></ng-view>
+    </div>
+
+    <!-- Angular related scripts -->
+    <script src="~/bower_components/angular/angular.min.js"></script>
+    <script src="~/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="~/bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="~/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="~/bower_components/angular-material/angular-material.min.js"></script>
+
+    <!-- Main App -->
+    <script src="~/App/src/main/broken-shoe-league.js"></script>
+    <script src="~/App/src/main/controllers/ee-main-controller.js"></script>
+</body>
+</html>

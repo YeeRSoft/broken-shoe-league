@@ -32,7 +32,9 @@ namespace BrokenShoeLeague.Data
 
         public Season GetSeasonById(int id)
         {
-            return Seasons.Find(id);
+            return Seasons
+                .Include(s => s.MatchDays.Select(x => x.PlayerStats))
+                .FirstOrDefault(x=>x.Id == id);
         }
 
         public void RemoveSeason(Season season)

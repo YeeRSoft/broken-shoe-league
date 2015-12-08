@@ -15,32 +15,22 @@
             </div>
         </md-toolbar>
         <md-list>
-            <md-item ng-repeat="item in homeCtrl.menu">
-                <a>
-                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
-                        <div class="inset">
-                            <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
-                        </div>
-                        <div class="inset">
-                            {{item.title}}
-                        </div>
-                    </md-item-content>
-                </a>
-            </md-item>
-            <md-divider></md-divider>
-            <md-subheader>Management</md-subheader>
-            <md-item ng-repeat="item in homeCtrl.admin">
-                <a>
-                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
-                        <div class="inset">
-                            <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
-                        </div>
-                        <div class="inset">
-                            {{item.title}}
-                        </div>
-                    </md-item-content>
-                </a>
-            </md-item>
+            <span ng-repeat="groupMenu in homeCtrl.menu">
+                <md-subheader>{{groupMenu.header}}</md-subheader>
+                <md-item ng-repeat="menuItem in groupMenu.items">
+                    <a>
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <ng-md-icon icon="{{menuItem.icon}}"></ng-md-icon>
+                            </div>
+                            <div class="inset">
+                                {{menuItem.title}}
+                            </div>
+                        </md-item-content>
+                    </a>
+                </md-item>
+                <md-divider></md-divider>
+            </span>
         </md-list>
     </md-sidenav>
     <div layout="column" class="relative" layout-fill role="main">
@@ -61,6 +51,11 @@
                 </md-button>
             </div>
         </md-toolbar>
+        <md-content flex md-scroll-y>
+            <ui-view layout="column" layout-fill layout-padding>
+
+            </ui-view>
+        </md-content>
     </div>
 
     <!-- Angular related scripts -->

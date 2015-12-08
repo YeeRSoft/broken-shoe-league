@@ -13,42 +13,62 @@
         };
         vm.menu = [
             {
-                link: '',
-                title: 'Dashboard',
-                icon: 'dashboard'
+                header: 'General',
+                items: [
+                    {
+                        link: '',
+                        title: 'Dashboard',
+                        icon: 'dashboard'
+                    },
+                    {
+                        link: '',
+                        title: 'Gallery',
+                        icon: 'view_carousel'
+                    },
+                    {
+                        link: '',
+                        title: 'News',
+                        icon: 'new_releases'
+                    }
+                ]
             },
             {
-                link: '',
-                title: 'Gallery',
-                icon: 'view_carousel'
+                header: 'Statistics',
+                items: [
+                    {
+                        link: '',
+                        title: 'Matchday Results',
+                        icon: 'today'
+                    },
+                    {
+                        link: '',
+                        title: 'Ranking',
+                        icon: 'view_list'
+                    }
+                ]
             },
             {
-                link: '',
-                title: 'News',
-                icon: 'message'
+                header: "User",
+                items: [
+                    { title: "Profile", link: "", icon: "perm_identity" },
+                    { title: "Messages", link: "", icon: "message" }
+                ]
             },
             {
-                link: '',
-                title: 'Matchday Results',
-                icon: 'today'
-            },
-            {
-                link: '',
-                title: 'Ranking',
-                icon: 'view_list'
+                header: "Manage",
+                items: [
+                    {
+                        link: '',
+                        title: 'Trash',
+                        icon: 'delete'
+                    },
+                    {
+                        link: 'showListBottomSheet($event)',
+                        title: 'Settings',
+                        icon: 'settings'
+                    }
+                ]
             }
-        ];
-        vm.admin = [
-          {
-              link: '',
-              title: 'Trash',
-              icon: 'delete'
-          },
-          {
-              link: 'showListBottomSheet($event)',
-              title: 'Settings',
-              icon: 'settings'
-          }
         ];
     }
 })()

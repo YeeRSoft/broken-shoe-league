@@ -1,6 +1,6 @@
-﻿(function() {
+﻿(function () {
     angular
-        .module('eeBrokenShoeLeague', ['ngMaterial'])
+        .module('eeBrokenShoeLeague')
         .config(configTheme);
 
     function configTheme($mdThemingProvider) {
@@ -11,11 +11,11 @@
         });
         $mdThemingProvider.definePalette('customBlue', customBlueMap);
         $mdThemingProvider.theme('default')
-        .primaryPalette('customBlue', {
-            'default': '500',
-            'hue-1': '50'
-        })
-        .accentPalette('pink');
+          .primaryPalette('customBlue', {
+              'default': '500',
+              'hue-1': '50'
+          })
+          .accentPalette('pink');
         $mdThemingProvider.theme('input', 'default')
             .primaryPalette('grey');
     }

@@ -194,9 +194,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\src\main\broken-shoe-league.js" />
-    <Content Include="App\src\main\controllers\ee-main-controller.js" />
-    <Content Include="App\src\styles\site.css" />
+    <Content Include="BSL.Client\app\broken-shoe-league.module.js" />
+    <Content Include="BSL.Client\app\broken-shoe-league.config.js" />
+    <Content Include="BSL.Client\app\components\user-avatar.directive.js" />
+    <Content Include="BSL.Client\app\home\HomeController.js" />
+    <Content Include="BSL.Client\assets\images\LoGOLiGA.png" />
+    <Content Include="BSL.Client\assets\styles\site.css" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -220,24 +223,12 @@
     </Content>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="BSL.Client\app\layout\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,39 +1,79 @@
-﻿$gray: #eee;
+﻿$gray: #eee; md-content.md-default-theme {
+    background-color: $gray;
+}
 
-md-content.md-default-theme {
-  background-color: $gray;
-}
 md-card {
-  background-color: #fff;
-  h2:first-of-type {
+    background-color: #fff;
+    h2: first-of-type;
+
+{
     margin-top: 0;
-  }
 }
+
+}
+
 md-toolbar {
-  .md-button.md-default-theme {
+    .md-button.md-default-theme;
+
+{
     border-radius: 99%;
-  }
 }
+
+}
+
 h2 {
-  font-weight: 400;
+    font-weight: 400;
 }
+
 .md-toolbar-tools-bottom {
-  font-size: small;
-  & :last-child {
+    font-size: small;
+    & :last-child;
+
+{
     opacity: 0.8;
-  }
 }
+
+}
+
 md-toolbar:not(.md-hue-1),
 .md-fab {
-  fill: #fff;
+    fill: #fff;
 }
+
 md-sidenav {
-  fill: #737373;
-  ng-md-icon {
+    fill: #737373;
+    ng-md-icon;
+
+{
     position: relative;
     top: 5px;
-  }
 }
+
+}
+
 .user-avatar {
-  border-radius: 99%;
+    border-radius: 99%;
 }
+
+.top_menu_holder {
+    text-align: center;
+}
+
+.avatar_holder {
+    text-align: center;
+}
+
+    .avatar_holder > svg {
+        display: inline;
+    }
+
+.submenu_link {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    .submenu_link:hover {
+        cursor: pointer;
+    }

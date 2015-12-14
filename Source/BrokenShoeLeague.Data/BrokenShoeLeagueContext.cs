@@ -52,6 +52,11 @@ namespace BrokenShoeLeague.Data
             throw new NotImplementedException();
         }
 
+        public bool SeasonExist(int seasonId)
+        {
+            return Seasons.Any(x => x.Id == seasonId);
+        }
+
         #endregion
 
         #region Players
@@ -85,6 +90,11 @@ namespace BrokenShoeLeague.Data
             playerDb.Name = player.Name;
             playerDb.Enabled = player.Enabled;
             SaveChanges();
+        }
+
+        public bool PlayerExist(int playerId)
+        {
+            return Players.Any(x => x.Id == playerId);
         }
 
         #endregion
@@ -151,6 +161,11 @@ namespace BrokenShoeLeague.Data
             {
                 Player = Players.Find(playerId)
             });
+        }
+
+        public bool MatchdayExist(int matchdayId)
+        {
+            return Matchdays.Any(x => x.Id == matchdayId);
         }
 
         #endregion

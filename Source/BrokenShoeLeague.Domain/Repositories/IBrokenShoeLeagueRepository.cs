@@ -11,6 +11,8 @@ namespace BrokenShoeLeague.Domain.Repositories
         void RemoveSeason(Season season);
         IQueryable<Season> GetAllSeasons();
         void UpdateSeason(Season season);
+        bool SeasonExist(int seasonId);
+
 
 
         //Player
@@ -19,6 +21,8 @@ namespace BrokenShoeLeague.Domain.Repositories
         void RemovePlayer(Player player);
         IQueryable<Player> GetAllPlayers();
         void UpdatePlayer(Player player);
+        bool PlayerExist(int playerId);
+
 
 
         //ImageCarousel
@@ -33,6 +37,8 @@ namespace BrokenShoeLeague.Domain.Repositories
         void RemoveMatchday(Matchday matchday);
         IQueryable<Matchday> GetAllMatchdays();
         void AddPlayerToMatchday(Matchday matchday, int playerId);
+        bool MatchdayExist(int matchdayId);
+
 
         //PlayerRecords
         void CreatePlayerRecord(PlayerRecord playerRecord);

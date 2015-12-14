@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity.Infrastructure;
+using System.Linq;
 using System.Web.Http;
 using BrokenShoeLeague.Domain;
 using BrokenShoeLeague.Domain.Repositories;
@@ -6,6 +7,7 @@ using BrokenShoeLeague.Web.API.Models;
 
 namespace BrokenShoeLeague.Web.API.Controllers
 {
+    [RoutePrefix("api/v1/players")]
     public class PlayersController : ApiController
     {
         private readonly IBrokenShoeLeagueRepository _brokenShoeLeagueRepository;
@@ -15,21 +17,33 @@ namespace BrokenShoeLeague.Web.API.Controllers
             _brokenShoeLeagueRepository = brokenShoeLeagueRepository;
         }
 
-        // GET api/players
+        [Route("")]
         public IHttpActionResult GetPlayers()
         {
-            return Ok(_brokenShoeLeagueRepository.GetAllPlayers());
+            return Ok(_brokenShoeLeagueRepository.GetAllPlayers().Select(p=>new
+            {
+                p.Id,
+                p.Name,
+                p.ImageProfileUrl,
+                p.Enabled
+            }));
         }
 
-        // GET api/players/5
+        [Route("{id}")]
         public IHttpActionResult GetPlayer(int id)
         {
-            var player = _brokenShoeLeagueRepository.GetPlayerById(id);
-            if (player == null)
-            {
+            if (!_brokenShoeLeagueRepository.PlayerExist(id))
                 return NotFound();
-            }
-            return Ok(player);
+
+            var player = _brokenShoeLeagueRepository.GetPlayerById(id);
+
+            return Ok(new
+            {
+                player.Id,
+                player.Name,
+                player.ImageProfileUrl,
+                player.Enabled,
+            });
         }
 
         // POST api/players

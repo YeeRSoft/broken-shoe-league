@@ -45,17 +45,25 @@ namespace BrokenShoeLeague.Data.Migrations
             }
             #endregion
 
-            context.Matchdays.AddOrUpdate(x=>x.Number, new Matchday()
-            {
-                Date = DateTime.Now,
-                Number = 1,
-                Season = new Season()
+            context.Matchdays.AddOrUpdate(x => x.Number,
+                new Matchday
                 {
-                    Name = "Season1",
-                    StartDate = DateTime.Now.AddMonths(-3),
-                    EndDate = DateTime.Now
-                }
-            });
+                    Date = DateTime.Now,
+                    Number = 1,
+                    Season = new Season
+                    {
+                        Name = "Season1",
+                        StartDate = DateTime.Now.AddMonths(-3),
+                        EndDate = DateTime.Now
+                    }
+                });
+
+            context.Players.AddOrUpdate(x => x.Name,
+                new Player {Name = "Player1", Enabled = true, ImageProfileUrl = "someUrl"},
+                new Player {Name = "Player2", Enabled = true, ImageProfileUrl = "someUrl"},
+                new Player {Name = "Player3", Enabled = true, ImageProfileUrl = "someUrl"}
+                );
+
             context.SaveChanges();
         }
     }

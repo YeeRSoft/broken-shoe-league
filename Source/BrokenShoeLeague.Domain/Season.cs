@@ -6,6 +6,6 @@ namespace BrokenShoeLeague.Domain
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Matchday> MatchDays { get; set; }
+        public ICollection<Matchday> Matchdays { get; set; }
     }
 }

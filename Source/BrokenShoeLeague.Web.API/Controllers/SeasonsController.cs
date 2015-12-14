@@ -96,13 +96,13 @@ namespace BrokenShoeLeague.Web.API.Controllers
         }
 
         [Route("matchdays/{seasonId}")]
-        public IHttpActionResult GetSeasonMatchDays(int seasonId)
+        public IHttpActionResult GetSeasonMatchdays(int seasonId)
         {
             var season = _brokenShoeLeagueRepository.GetSeasonById(seasonId);
             if (season == null)
                 return NotFound();
 
-            return Ok(season.MatchDays);
+            return Ok(season.Matchdays);
         }
 
         [Route("ranking/{seasonId}")]

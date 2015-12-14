@@ -11,7 +11,7 @@ namespace BrokenShoeLeague.Domain
         [Required]
         public int Number { get; set; }
         public virtual IList<PlayerRecord> PlayerStats { get; set; }
-        public virtual IList<ImageCarousel> MatchDayImages { get; set; }
+        public virtual IList<ImageCarousel> MatchdayImages { get; set; }
         [Required]
         public DateTime Date { get; set; }
         [Required]

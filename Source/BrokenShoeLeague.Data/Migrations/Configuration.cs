@@ -45,7 +45,7 @@ namespace BrokenShoeLeague.Data.Migrations
             }
             #endregion
 
-            context.MatchDays.AddOrUpdate(x=>x.Number, new Matchday()
+            context.Matchdays.AddOrUpdate(x=>x.Number, new Matchday()
             {
                 Date = DateTime.Now,
                 Number = 1,

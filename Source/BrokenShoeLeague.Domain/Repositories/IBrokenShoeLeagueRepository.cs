@@ -27,12 +27,12 @@ namespace BrokenShoeLeague.Domain.Repositories
         void RemoveImageCarousel(ImageCarousel imageCarousel);
         IQueryable<ImageCarousel> GetAllImageCarousel();
 
-        //MatchDays
-        void CreateMatchDay(Matchday matchDay);
-        Matchday GetMatchDayById(int id);
-        void RemoveMatchDay(Matchday matchDay);
-        IQueryable<Matchday> GetAllMatchDays();
-        void AddPlayerToMatchDay(Matchday matchDay, int playerId);
+        //Matchdays
+        void CreateMatchday(Matchday matchday);
+        Matchday GetMatchdayById(int id);
+        void RemoveMatchday(Matchday matchday);
+        IQueryable<Matchday> GetAllMatchdays();
+        void AddPlayerToMatchday(Matchday matchday, int playerId);
 
         //PlayerRecords
         void CreatePlayerRecord(PlayerRecord playerRecord);

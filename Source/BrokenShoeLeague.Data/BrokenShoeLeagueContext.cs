@@ -14,7 +14,7 @@ namespace BrokenShoeLeague.Data
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
-        public DbSet<Matchday> MatchDays { get; set; }
+        public DbSet<Matchday> Matchdays { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<Achievment> Achievments { get; set; }
         public DbSet<Season> Seasons { get; set; }
@@ -33,7 +33,7 @@ namespace BrokenShoeLeague.Data
         public Season GetSeasonById(int id)
         {
             return Seasons
-                .Include(s => s.MatchDays.Select(x => x.PlayerStats))
+                .Include(s => s.Matchdays.Select(x => x.PlayerStats))
                 .FirstOrDefault(x=>x.Id == id);
         }
 
@@ -122,32 +122,32 @@ namespace BrokenShoeLeague.Data
 
         #endregion
 
-        #region MatchDay
+        #region Matchday
 
-        public void CreateMatchDay(Matchday matchDay)
+        public void CreateMatchday(Matchday matchday)
         {
-            MatchDays.Add(matchDay);
+            Matchdays.Add(matchday);
             SaveChanges();
         }
 
-        public Matchday GetMatchDayById(int id)
+        public Matchday GetMatchdayById(int id)
         {
-            return MatchDays.Find(id);
+            return Matchdays.Find(id);
         }
 
-        public void RemoveMatchDay(Matchday matchDay)
+        public void RemoveMatchday(Matchday matchday)
         {
-            MatchDays.Remove(matchDay);
+            Matchdays.Remove(matchday);
         }
 
-        public IQueryable<Matchday> GetAllMatchDays()
+        public IQueryable<Matchday> GetAllMatchdays()
         {
-            return MatchDays;
+            return Matchdays;
         }
 
-        public void AddPlayerToMatchDay(Matchday matchDay, int playerId)
+        public void AddPlayerToMatchday(Matchday matchday, int playerId)
         {
-            matchDay.PlayerStats.Add(new PlayerRecord()
+            matchday.PlayerStats.Add(new PlayerRecord()
             {
                 Player = Players.Find(playerId)
             });

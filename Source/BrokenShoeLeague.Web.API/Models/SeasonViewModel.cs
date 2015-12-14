@@ -11,7 +11,7 @@ namespace BrokenShoeLeague.Web.API.Models
         public SeasonViewModel(Season season)
         {
             Name = season.Name;
-            Matchdays = season.MatchDays.Select(x => new MatchdayViewModel(x));
+            Matchdays = season.Matchdays.Select(x => new MatchdayViewModel(x));
         }
 
         public IEnumerable<MatchdayViewModel> Matchdays { get; set; }

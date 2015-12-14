@@ -13,8 +13,8 @@ namespace BrokenShoeLeague.Domain
         public virtual Player Player { get; set; }
         public int PlayerId { get; set; }
         public int AllowedGoals { get; set; }
-        public virtual Matchday MatchDay { get; set; }
-        public int MatchDayId { get; set; }
+        public virtual Matchday Matchday { get; set; }
+        public int MatchdayId { get; set; }
         public double Performance
         {
             get { return Utils.CalculatePerformance(this); }

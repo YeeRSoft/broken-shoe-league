@@ -194,6 +194,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BSL.Client\app\broken-shoe-league.constants.js" />
+    <Content Include="BSL.Client\app\broken-shoe-league.route.js" />
     <Content Include="BSL.Client\app\broken-shoe-league.module.js" />
     <Content Include="BSL.Client\app\broken-shoe-league.config.js" />
     <Content Include="BSL.Client\app\components\user-avatar.directive.js" />

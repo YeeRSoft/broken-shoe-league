@@ -44,12 +44,7 @@ namespace BrokenShoeLeague.Data
 
         public IQueryable<Season> GetAllSeasons()
         {
-            return Seasons.AsQueryable();
-        }
-
-        public void UpdateSeason(Season season)
-        {
-            throw new NotImplementedException();
+            return Seasons.Include(x=>x.Matchdays).AsQueryable();
         }
 
         public bool SeasonExist(int seasonId)

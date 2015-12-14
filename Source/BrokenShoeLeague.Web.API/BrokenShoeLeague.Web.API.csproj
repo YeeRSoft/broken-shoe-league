@@ -198,6 +198,7 @@
     <Content Include="BSL.Client\app\broken-shoe-league.config.js" />
     <Content Include="BSL.Client\app\components\user-avatar.directive.js" />
     <Content Include="BSL.Client\app\home\HomeController.js" />
+    <Content Include="BSL.Client\assets\images\background.jpg" />
     <Content Include="BSL.Client\assets\images\LoGOLiGA.png" />
     <Content Include="BSL.Client\assets\styles\site.css" />
     <Content Include="Areas\HelpPage\HelpPage.css" />

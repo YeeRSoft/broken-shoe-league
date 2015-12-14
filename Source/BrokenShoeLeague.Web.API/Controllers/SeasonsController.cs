@@ -2,6 +2,7 @@
 using System.Web.Http;
 using BrokenShoeLeague.Domain;
 using BrokenShoeLeague.Domain.Repositories;
+using BrokenShoeLeague.Services.Seasons;
 
 namespace BrokenShoeLeague.Web.API.Controllers
 {
@@ -9,10 +10,12 @@ namespace BrokenShoeLeague.Web.API.Controllers
     public class SeasonsController : ApiController
     {
         private readonly IBrokenShoeLeagueRepository _brokenShoeLeagueRepository;
+        private readonly ISeasonStatsProvider _seasonStatsProvider;
 
-        public SeasonsController(IBrokenShoeLeagueRepository brokenShoeLeagueRepository)
+        public SeasonsController(IBrokenShoeLeagueRepository brokenShoeLeagueRepository, ISeasonStatsProvider seasonStatsProvider)
         {
             _brokenShoeLeagueRepository = brokenShoeLeagueRepository;
+            _seasonStatsProvider = seasonStatsProvider;
         }
 
         [Route("")]
@@ -32,7 +35,6 @@ namespace BrokenShoeLeague.Web.API.Controllers
             return Ok(season);
         }
 
-        // POST api/players
         public IHttpActionResult Post([FromBody]Season season)
         {
             if (!ModelState.IsValid)
@@ -43,7 +45,6 @@ namespace BrokenShoeLeague.Web.API.Controllers
             return Ok(season);
         }
 
-        // PUT api/players/5
         public IHttpActionResult Put([FromUri]int id, [FromBody]Season season)
         {
             var currentPlayer = _brokenShoeLeagueRepository.GetPlayerById(id);
@@ -67,7 +68,6 @@ namespace BrokenShoeLeague.Web.API.Controllers
             }
         }
 
-        // DELETE api/players/5
         public IHttpActionResult Delete(int id)
         {
             var season = _brokenShoeLeagueRepository.GetSeasonById(id);
@@ -85,7 +85,7 @@ namespace BrokenShoeLeague.Web.API.Controllers
             return Ok(season);
         }
 
-        [Route("matchdays/{seasonId}")]
+        [Route("{seasonId}/matchdays")]
         public IHttpActionResult GetSeasonMatchDays(int seasonId)
         {
             var season = _brokenShoeLeagueRepository.GetSeasonById(seasonId);
@@ -93,6 +93,36 @@ namespace BrokenShoeLeague.Web.API.Controllers
                 return NotFound();
             
             return Ok(season.MatchDays);
+        }
+
+        [Route("{seasonId}/ranking")]
+        public IHttpActionResult GetSeasonRanking(int seasonId)
+        {
+            var season = _brokenShoeLeagueRepository.GetSeasonById(seasonId);
+            if (season == null)
+                return NotFound();
+
+            return Ok();
+        }
+
+        [Route("{seasonId}/topScorers")]
+        public IHttpActionResult GetSeasonTopScorers(int seasonId)
+        {
+            var season = _brokenShoeLeagueRepository.GetSeasonById(seasonId);
+            if (season == null)
+                return NotFound();
+
+            return Ok(_seasonStatsProvider.GetSeasonTopScorers(seasonId));
+        }
+
+        [Route("{seasonId}/topAssits")]
+        public IHttpActionResult GetSeasonTopAssits(int seasonId)
+        {
+            var season = _brokenShoeLeagueRepository.GetSeasonById(seasonId);
+            if (season == null)
+                return NotFound();
+
+            return Ok(_seasonStatsProvider.GetSeasonTopAssists(seasonId));
         }
     }
 }

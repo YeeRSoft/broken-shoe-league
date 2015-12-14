@@ -190,7 +190,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MatchdayViewModel.cs" />
     <Compile Include="Models\PlayerRankingStatsViewModel.cs" />
+    <Compile Include="Models\SeasonViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

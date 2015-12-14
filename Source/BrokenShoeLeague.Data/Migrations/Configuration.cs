@@ -51,7 +51,9 @@ namespace BrokenShoeLeague.Data.Migrations
                 Number = 1,
                 Season = new Season()
                 {
-                    Name = "Season1"
+                    Name = "Season1",
+                    StartDate = DateTime.Now.AddMonths(-3),
+                    EndDate = DateTime.Now
                 }
             });
             context.SaveChanges();

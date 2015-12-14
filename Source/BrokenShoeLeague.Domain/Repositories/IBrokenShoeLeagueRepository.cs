@@ -10,7 +10,6 @@ namespace BrokenShoeLeague.Domain.Repositories
         Season GetSeasonById(int id);
         void RemoveSeason(Season season);
         IQueryable<Season> GetAllSeasons();
-        void UpdateSeason(Season season);
         bool SeasonExist(int seasonId);
 
 
@@ -20,7 +19,6 @@ namespace BrokenShoeLeague.Domain.Repositories
         Player GetPlayerById(int id);
         void RemovePlayer(Player player);
         IQueryable<Player> GetAllPlayers();
-        void UpdatePlayer(Player player);
         bool PlayerExist(int playerId);
 
 

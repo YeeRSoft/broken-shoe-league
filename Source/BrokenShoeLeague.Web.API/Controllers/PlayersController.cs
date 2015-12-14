@@ -2,6 +2,7 @@
 using System.Web.Http;
 using BrokenShoeLeague.Domain;
 using BrokenShoeLeague.Domain.Repositories;
+using BrokenShoeLeague.Web.API.Models;
 
 namespace BrokenShoeLeague.Web.API.Controllers
 {
@@ -43,27 +44,23 @@ namespace BrokenShoeLeague.Web.API.Controllers
         }
 
         // PUT api/players/5
-        public IHttpActionResult Put([FromUri]int id, [FromBody]Player player)
+        public IHttpActionResult Put([FromUri]int id, [FromBody]PlayerViewModel player)
         {
             var currentPlayer = _brokenShoeLeagueRepository.GetPlayerById(id);
-            if (ModelState.IsValid && currentPlayer != null)
-            {
-                try
-                {
-                    player.Id = id;
-                    _brokenShoeLeagueRepository.UpdatePlayer(player);
-                    _brokenShoeLeagueRepository.SaveChanges();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    return NotFound();
-                }
-                return Ok(player);
-            }
-            else
-            {
+
+            if (!ModelState.IsValid || currentPlayer == null) 
                 return BadRequest(ModelState);
+
+            try
+            {
+                currentPlayer.Update(player.Name, player.ImageProfileUrl, player.Enabled);
+                _brokenShoeLeagueRepository.SaveChanges();
             }
+            catch (DbUpdateConcurrencyException)
+            {
+                return NotFound();
+            }
+            return Ok(player);
         }
 
         // DELETE api/players/5

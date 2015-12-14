@@ -40,5 +40,12 @@ namespace BrokenShoeLeague.Domain
         {
             get { return PlayerRecords.Any() ? PlayerRecords.Average(x => x.Performance) : 0; }
         }
+
+        public void Update(string name, string imageProfileUrl, bool enabled)
+        {
+            Name = name;
+            ImageProfileUrl = imageProfileUrl;
+            Enabled = enabled;
+        }
     }
 }

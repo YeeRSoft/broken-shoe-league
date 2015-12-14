@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace BrokenShoeLeague.Domain
 {
-    public class MatchDay
+    public class Matchday
     {
         public int Id { get; set; }
         [Required]

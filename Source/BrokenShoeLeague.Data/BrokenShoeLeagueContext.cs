@@ -14,7 +14,7 @@ namespace BrokenShoeLeague.Data
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
-        public DbSet<MatchDay> MatchDays { get; set; }
+        public DbSet<Matchday> MatchDays { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<Achievment> Achievments { get; set; }
         public DbSet<Season> Seasons { get; set; }
@@ -124,28 +124,28 @@ namespace BrokenShoeLeague.Data
 
         #region MatchDay
 
-        public void CreateMatchDay(MatchDay matchDay)
+        public void CreateMatchDay(Matchday matchDay)
         {
             MatchDays.Add(matchDay);
             SaveChanges();
         }
 
-        public MatchDay GetMatchDayById(int id)
+        public Matchday GetMatchDayById(int id)
         {
             return MatchDays.Find(id);
         }
 
-        public void RemoveMatchDay(MatchDay matchDay)
+        public void RemoveMatchDay(Matchday matchDay)
         {
             MatchDays.Remove(matchDay);
         }
 
-        public IQueryable<MatchDay> GetAllMatchDays()
+        public IQueryable<Matchday> GetAllMatchDays()
         {
             return MatchDays;
         }
 
-        public void AddPlayerToMatchDay(MatchDay matchDay, int playerId)
+        public void AddPlayerToMatchDay(Matchday matchDay, int playerId)
         {
             matchDay.PlayerStats.Add(new PlayerRecord()
             {
@@ -183,9 +183,9 @@ namespace BrokenShoeLeague.Data
         {
             var playerRecord = PlayerRecords.Find(playerRecordId);
             playerRecord.PlayedGames = data.PlayedGames;
-            playerRecord.Wins = data.Wins;
-            playerRecord.Draws = data.Draws;
-            playerRecord.Losts = data.Losts;
+            playerRecord.Won = data.Won;
+            playerRecord.Tied = data.Tied;
+            playerRecord.Lost = data.Lost;
             playerRecord.Assists = data.Assists;
             playerRecord.AllowedGoals = data.AllowedGoals;
             playerRecord.Goals = data.Goals;

@@ -50,7 +50,7 @@
     <Compile Include="Achievment.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="ImageCarousel.cs" />
-    <Compile Include="MatchDay.cs" />
+    <Compile Include="Matchday.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

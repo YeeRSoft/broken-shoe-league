@@ -28,7 +28,7 @@ namespace BrokenShoeLeague.Domain
 
         public static double CalculatePerformance(PlayerRecord pRecord)
         {
-            return CalculatePerformance(pRecord.PlayedGames,pRecord.Wins,pRecord.Losts,pRecord.Draws,pRecord.Assists,pRecord.Goals,pRecord.AllowedGoals);
+            return CalculatePerformance(pRecord.PlayedGames,pRecord.Won,pRecord.Lost,pRecord.Tied,pRecord.Assists,pRecord.Goals,pRecord.AllowedGoals);
         }
 
         public static double CalculatePerformance(IEnumerable<PlayerRecord> stats)
@@ -37,9 +37,9 @@ namespace BrokenShoeLeague.Domain
             foreach (var stat in stats)
             {
                 jj += stat.PlayedGames;
-                jg += stat.Wins;
-                jp += stat.Losts;
-                je += stat.Draws;
+                jg += stat.Won;
+                jp += stat.Lost;
+                je += stat.Tied;
                 assists += stat.Assists;
                 goals += stat.Goals;
                 ag += stat.AllowedGoals;
@@ -52,7 +52,7 @@ namespace BrokenShoeLeague.Domain
         {
             var ave = player.PlayerRecords.Any()
                 ? player.PlayerRecords.Average(
-                    stat => CalculatePerformance(stat.PlayedGames, stat.Wins, stat.Losts, stat.Draws, stat.Assists, stat.Goals, stat.AllowedGoals))
+                    stat => CalculatePerformance(stat.PlayedGames, stat.Won, stat.Lost, stat.Tied, stat.Assists, stat.Goals, stat.AllowedGoals))
                 : 0;
 
             return Math.Round(ave, 3);

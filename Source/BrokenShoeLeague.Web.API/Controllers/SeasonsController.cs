@@ -1,8 +1,10 @@
 ﻿using System.Data.Entity.Infrastructure;
+using System.Linq;
 using System.Web.Http;
 using BrokenShoeLeague.Domain;
 using BrokenShoeLeague.Domain.Repositories;
 using BrokenShoeLeague.Services.Seasons;
+using BrokenShoeLeague.Web.API.Models;
 
 namespace BrokenShoeLeague.Web.API.Controllers
 {
@@ -21,18 +23,26 @@ namespace BrokenShoeLeague.Web.API.Controllers
         [Route("")]
         public IHttpActionResult GetSeasons()
         {
-            return Ok(_brokenShoeLeagueRepository.GetAllSeasons());
+            var responseContent = _brokenShoeLeagueRepository.GetAllSeasons()
+                .Select(x => new
+                {
+                    x.Id,
+                    x.Name
+                });
+            return Ok(responseContent);
         }
 
         [Route("{id}")]
         public IHttpActionResult GetSeason(int id)
         {
             var season = _brokenShoeLeagueRepository.GetSeasonById(id);
+
             if (season == null)
-            {
                 return NotFound();
-            }
-            return Ok(season);
+
+            var response = new SeasonViewModel(season);
+
+            return Ok(response);
         }
 
         public IHttpActionResult Post([FromBody]Season season)
@@ -85,17 +95,17 @@ namespace BrokenShoeLeague.Web.API.Controllers
             return Ok(season);
         }
 
-        [Route("{seasonId}/matchdays")]
+        [Route("matchdays/{seasonId}")]
         public IHttpActionResult GetSeasonMatchDays(int seasonId)
         {
             var season = _brokenShoeLeagueRepository.GetSeasonById(seasonId);
             if (season == null)
                 return NotFound();
-            
+
             return Ok(season.MatchDays);
         }
 
-        [Route("{seasonId}/ranking")]
+        [Route("ranking/{seasonId}")]
         public IHttpActionResult GetSeasonRanking(int seasonId)
         {
             var season = _brokenShoeLeagueRepository.GetSeasonById(seasonId);
@@ -105,7 +115,7 @@ namespace BrokenShoeLeague.Web.API.Controllers
             return Ok();
         }
 
-        [Route("{seasonId}/topScorers")]
+        [Route("topScorers/{seasonId}")]
         public IHttpActionResult GetSeasonTopScorers(int seasonId)
         {
             var season = _brokenShoeLeagueRepository.GetSeasonById(seasonId);
@@ -115,7 +125,7 @@ namespace BrokenShoeLeague.Web.API.Controllers
             return Ok(_seasonStatsProvider.GetSeasonTopScorers(seasonId));
         }
 
-        [Route("{seasonId}/topAssits")]
+        [Route("topAssits/{seasonId}")]
         public IHttpActionResult GetSeasonTopAssits(int seasonId)
         {
             var season = _brokenShoeLeagueRepository.GetSeasonById(seasonId);

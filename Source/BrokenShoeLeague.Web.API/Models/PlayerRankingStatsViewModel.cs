@@ -1,7 +1,26 @@
-﻿namespace BrokenShoeLeague.Web.API.Models
+﻿using BrokenShoeLeague.Domain;
+
+namespace BrokenShoeLeague.Web.API.Models
 {
     public class PlayerRankingStatsViewModel
     {
+        public PlayerRankingStatsViewModel()
+        {
+            
+        }
+
+        public PlayerRankingStatsViewModel(PlayerRecord playerRecord)
+        {
+            PlayerName = playerRecord.Player.Name;
+            ImageUrl = playerRecord.Player.ImageProfileUrl;
+            Performance = playerRecord.Performance;
+            Won = playerRecord.Won;
+            Lost = playerRecord.Lost;
+            Tied = playerRecord.Tied;
+            Goals = playerRecord.Goals;
+            Assists = playerRecord.Assists;
+        }
+
         public string PlayerName { get; set; }
         public string ImageUrl { get; set; }
         public double Performance { get; set; }

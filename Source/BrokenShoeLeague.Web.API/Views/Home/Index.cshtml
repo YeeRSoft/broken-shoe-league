@@ -20,9 +20,9 @@
         <md-list>
             <span ng-repeat="groupMenu in homeCtrl.menu">
                 <md-subheader>{{groupMenu.header}}</md-subheader>
-                <md-item ng-repeat="menuItem in groupMenu.items">
+                <md-item md-ink-ripple ng-repeat="menuItem in groupMenu.items">
                     <a>
-                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <md-item-content layout="row" layout-align="start center">
                             <div class="submenu_link" ng-click="homeCtrl.go(menuItem.link)">
                                 <ng-md-icon icon="{{menuItem.icon}}"></ng-md-icon>
                             </div>

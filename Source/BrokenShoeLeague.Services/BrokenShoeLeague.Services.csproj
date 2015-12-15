@@ -40,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seasons\ISeasonStatsProvider.cs" />
+    <Compile Include="Seasons\Models\PlayerStats.cs" />
+    <Compile Include="Seasons\SeasonStatsProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BrokenShoeLeague.Data\BrokenShoeLeague.Data.csproj">

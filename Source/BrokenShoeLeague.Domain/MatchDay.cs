@@ -5,13 +5,13 @@ using System.Linq;
 
 namespace BrokenShoeLeague.Domain
 {
-    public class MatchDay
+    public class Matchday
     {
         public int Id { get; set; }
         [Required]
         public int Number { get; set; }
         public virtual IList<PlayerRecord> PlayerStats { get; set; }
-        public virtual IList<ImageCarousel> MatchDayImages { get; set; }
+        public virtual IList<ImageCarousel> MatchdayImages { get; set; }
         [Required]
         public DateTime Date { get; set; }
         [Required]

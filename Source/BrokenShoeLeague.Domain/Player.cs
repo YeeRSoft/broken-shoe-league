@@ -21,24 +21,31 @@ namespace BrokenShoeLeague.Domain
         {
             get
             {
-                return PlayerRecords.Count(pRecord => pRecord.Performance == pRecord.MatchDay.TopPerformance);
+                return PlayerRecords.Count(pRecord => pRecord.Performance == pRecord.Matchday.TopPerformance);
             }
         }
         public double CalculatePerformance(int seasonId = 0)
         {
-            return Utils.CalculatePerformance(seasonId <= 0 ? PlayerRecords : PlayerRecords.Where(x => x.MatchDay.Season.Id == seasonId));
+            return Utils.CalculatePerformance(seasonId <= 0 ? PlayerRecords : PlayerRecords.Where(x => x.Matchday.Season.Id == seasonId));
         }
 
         public int MVPs
         {
             get
             {
-                return PlayerRecords.Count(x => Math.Abs(x.Performance - x.MatchDay.PlayerStats.Max(ps => ps.Performance)) < 0.0001);
+                return PlayerRecords.Count(x => Math.Abs(x.Performance - x.Matchday.PlayerStats.Max(ps => ps.Performance)) < 0.0001);
             }
         }
         public double AveragePerformance
         {
             get { return PlayerRecords.Any() ? PlayerRecords.Average(x => x.Performance) : 0; }
+        }
+
+        public void Update(string name, string imageProfileUrl, bool enabled)
+        {
+            Name = name;
+            ImageProfileUrl = imageProfileUrl;
+            Enabled = enabled;
         }
     }
 }

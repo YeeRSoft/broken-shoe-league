@@ -14,7 +14,7 @@ namespace BrokenShoeLeague.Data
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
-        public DbSet<MatchDay> MatchDays { get; set; }
+        public DbSet<Matchday> Matchdays { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<Achievment> Achievments { get; set; }
         public DbSet<Season> Seasons { get; set; }
@@ -33,7 +33,7 @@ namespace BrokenShoeLeague.Data
         public Season GetSeasonById(int id)
         {
             return Seasons
-                .Include(s => s.MatchDays.Select(x => x.PlayerStats))
+                .Include(s => s.Matchdays.Select(x => x.PlayerStats))
                 .FirstOrDefault(x=>x.Id == id);
         }
 
@@ -44,12 +44,12 @@ namespace BrokenShoeLeague.Data
 
         public IQueryable<Season> GetAllSeasons()
         {
-            return Seasons.AsQueryable();
+            return Seasons.Include(x=>x.Matchdays).AsQueryable();
         }
 
-        public void UpdateSeason(Season season)
+        public bool SeasonExist(int seasonId)
         {
-            throw new NotImplementedException();
+            return Seasons.Any(x => x.Id == seasonId);
         }
 
         #endregion
@@ -87,6 +87,11 @@ namespace BrokenShoeLeague.Data
             SaveChanges();
         }
 
+        public bool PlayerExist(int playerId)
+        {
+            return Players.Any(x => x.Id == playerId);
+        }
+
         #endregion
 
         #region ImageCarousel
@@ -122,35 +127,40 @@ namespace BrokenShoeLeague.Data
 
         #endregion
 
-        #region MatchDay
+        #region Matchday
 
-        public void CreateMatchDay(MatchDay matchDay)
+        public void CreateMatchday(Matchday matchday)
         {
-            MatchDays.Add(matchDay);
+            Matchdays.Add(matchday);
             SaveChanges();
         }
 
-        public MatchDay GetMatchDayById(int id)
+        public Matchday GetMatchdayById(int id)
         {
-            return MatchDays.Find(id);
+            return Matchdays.Find(id);
         }
 
-        public void RemoveMatchDay(MatchDay matchDay)
+        public void RemoveMatchday(Matchday matchday)
         {
-            MatchDays.Remove(matchDay);
+            Matchdays.Remove(matchday);
         }
 
-        public IQueryable<MatchDay> GetAllMatchDays()
+        public IQueryable<Matchday> GetAllMatchdays()
         {
-            return MatchDays;
+            return Matchdays;
         }
 
-        public void AddPlayerToMatchDay(MatchDay matchDay, int playerId)
+        public void AddPlayerToMatchday(Matchday matchday, int playerId)
         {
-            matchDay.PlayerStats.Add(new PlayerRecord()
+            matchday.PlayerStats.Add(new PlayerRecord()
             {
                 Player = Players.Find(playerId)
             });
+        }
+
+        public bool MatchdayExist(int matchdayId)
+        {
+            return Matchdays.Any(x => x.Id == matchdayId);
         }
 
         #endregion
@@ -183,9 +193,9 @@ namespace BrokenShoeLeague.Data
         {
             var playerRecord = PlayerRecords.Find(playerRecordId);
             playerRecord.PlayedGames = data.PlayedGames;
-            playerRecord.Wins = data.Wins;
-            playerRecord.Draws = data.Draws;
-            playerRecord.Losts = data.Losts;
+            playerRecord.Won = data.Won;
+            playerRecord.Tied = data.Tied;
+            playerRecord.Lost = data.Lost;
             playerRecord.Assists = data.Assists;
             playerRecord.AllowedGoals = data.AllowedGoals;
             playerRecord.Goals = data.Goals;

@@ -1,10 +1,13 @@
 ﻿using System.Data.Entity.Infrastructure;
+using System.Linq;
 using System.Web.Http;
 using BrokenShoeLeague.Domain;
 using BrokenShoeLeague.Domain.Repositories;
+using BrokenShoeLeague.Web.API.Models;
 
 namespace BrokenShoeLeague.Web.API.Controllers
 {
+    [RoutePrefix("api/v1/players")]
     public class PlayersController : ApiController
     {
         private readonly IBrokenShoeLeagueRepository _brokenShoeLeagueRepository;
@@ -14,21 +17,33 @@ namespace BrokenShoeLeague.Web.API.Controllers
             _brokenShoeLeagueRepository = brokenShoeLeagueRepository;
         }
 
-        // GET api/players
+        [Route("")]
         public IHttpActionResult GetPlayers()
         {
-            return Ok(_brokenShoeLeagueRepository.GetAllPlayers());
+            return Ok(_brokenShoeLeagueRepository.GetAllPlayers().Select(p=>new
+            {
+                p.Id,
+                p.Name,
+                p.ImageProfileUrl,
+                p.Enabled
+            }));
         }
 
-        // GET api/players/5
+        [Route("{id}")]
         public IHttpActionResult GetPlayer(int id)
         {
-            var player = _brokenShoeLeagueRepository.GetPlayerById(id);
-            if (player == null)
-            {
+            if (!_brokenShoeLeagueRepository.PlayerExist(id))
                 return NotFound();
-            }
-            return Ok(player);
+
+            var player = _brokenShoeLeagueRepository.GetPlayerById(id);
+
+            return Ok(new
+            {
+                player.Id,
+                player.Name,
+                player.ImageProfileUrl,
+                player.Enabled,
+            });
         }
 
         // POST api/players
@@ -43,27 +58,23 @@ namespace BrokenShoeLeague.Web.API.Controllers
         }
 
         // PUT api/players/5
-        public IHttpActionResult Put([FromUri]int id, [FromBody]Player player)
+        public IHttpActionResult Put([FromUri]int id, [FromBody]PlayerViewModel player)
         {
             var currentPlayer = _brokenShoeLeagueRepository.GetPlayerById(id);
-            if (ModelState.IsValid && currentPlayer != null)
-            {
-                try
-                {
-                    player.Id = id;
-                    _brokenShoeLeagueRepository.UpdatePlayer(player);
-                    _brokenShoeLeagueRepository.SaveChanges();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    return NotFound();
-                }
-                return Ok(player);
-            }
-            else
-            {
+
+            if (!ModelState.IsValid || currentPlayer == null) 
                 return BadRequest(ModelState);
+
+            try
+            {
+                currentPlayer.Update(player.Name, player.ImageProfileUrl, player.Enabled);
+                _brokenShoeLeagueRepository.SaveChanges();
             }
+            catch (DbUpdateConcurrencyException)
+            {
+                return NotFound();
+            }
+            return Ok(player);
         }
 
         // DELETE api/players/5

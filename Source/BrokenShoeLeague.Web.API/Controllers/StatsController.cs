@@ -21,7 +21,7 @@ namespace BrokenShoeLeague.Web.API.Controllers
                 return NotFound();
 
             var seasonPlayers= _brokenShoeLeagueRepository.GetAllPlayers()
-                .Where(p => p.PlayerRecords.Any(pr => pr.MatchDay.Season.Id == seasonId));
+                .Where(p => p.PlayerRecords.Any(pr => pr.Matchday.Season.Id == seasonId));
 
             return Ok();
         }

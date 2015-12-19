@@ -36,6 +36,7 @@ namespace BrokenShoeLeague.Domain
                 return PlayerRecords.Count(x => Math.Abs(x.Performance - x.Matchday.PlayerStats.Max(ps => ps.Performance)) < 0.0001);
             }
         }
+        /*We shouldn't calculate this. It's not useful.*/
         public double AveragePerformance
         {
             get { return PlayerRecords.Any() ? PlayerRecords.Average(x => x.Performance) : 0; }

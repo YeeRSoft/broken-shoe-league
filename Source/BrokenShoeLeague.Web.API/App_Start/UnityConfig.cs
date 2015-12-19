@@ -11,11 +11,12 @@ namespace BrokenShoeLeague.Web.API
     {
         public static void RegisterComponents()
         {
-			var container = new UnityContainer();
-            
+            var container = new UnityContainer();
+
             container.RegisterType<IBrokenShoeLeagueRepository, BrokenShoeLeagueContext>();
             container.RegisterType<ISeasonStatsProvider, SeasonStatsProvider>();
-            
+            container.RegisterType<IStatsImporter, StatsImporter>();
+
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }

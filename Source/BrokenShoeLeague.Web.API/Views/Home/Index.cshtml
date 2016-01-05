@@ -2,28 +2,31 @@
 <head>
     <link rel="stylesheet" href="~/bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="~/BSL.Client/assets/styles/site.css">
+    <title>Broken Shoe League</title>
 </head>
 <body layout="row" ng-controller="HomeController as homeCtrl">
     <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" style="min-width:200px" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-        <md-toolbar class="md-tall md-hue-2">
+        <md-toolbar class="md-tall md-hue-2 top_menu_holder">
             <span flex></span>
             <div layout="column" class="md-toolbar-tools-bottom inset">
-                <user-avatar></user-avatar>
+                <div class="avatar_holder">
+                    <user-avatar></user-avatar>
+                </div>
                 <span></span>
                 <div>Firstname Lastname</div>
-                <div>email@domainname.com</div>
+                <div><b>email@domainname.com</b></div>
             </div>
         </md-toolbar>
         <md-list>
             <span ng-repeat="groupMenu in homeCtrl.menu">
                 <md-subheader>{{groupMenu.header}}</md-subheader>
-                <md-item ng-repeat="menuItem in groupMenu.items">
+                <md-item md-ink-ripple ng-repeat="menuItem in groupMenu.items">
                     <a>
-                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
-                            <div class="inset">
+                        <md-item-content layout="row" layout-align="start center">
+                            <div class="submenu_link" ng-click="homeCtrl.go(menuItem.link)">
                                 <ng-md-icon icon="{{menuItem.icon}}"></ng-md-icon>
                             </div>
-                            <div class="inset">
+                            <div class="submenu_link" ng-click="homeCtrl.go(menuItem.link)">
                                 {{menuItem.title}}
                             </div>
                         </md-item-content>

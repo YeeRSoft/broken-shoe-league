@@ -8,6 +8,8 @@
     function homeCtroller($mdBottomSheet, $mdSidenav, $mdDialog, $location) {
         var vm = this;
 
+        vm.go = function (url) { $location.path(url); }
+
         vm.toggleSidenav = function (menuId) {
             $mdSidenav(menuId).toggle();
         };
@@ -50,7 +52,7 @@
                 header: '',
                 items: [
                     {
-                        link: '',
+                        link: 'dashboard',
                         title: 'Dashboard',
                         icon: 'dashboard'
                     },

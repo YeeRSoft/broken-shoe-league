@@ -18,7 +18,6 @@ namespace BrokenShoeLeague.Domain
             const double wDraw = 1 / 15.0;
             const double wLost = 0.1;
             return Math.Round((wWin * jg + wDraw * je - wLost * jp + wGoals * goals + wAssists * assists) / jj, 3);
-            //return Math.Round((wGoals * goals + wAssists * assists + w3 * jg + w4 * je) / (jj + w5 * jp), 3);
         }
 
         public static double CalculatePerformance(Player player)

@@ -97,7 +97,7 @@ namespace BrokenShoeLeague.Web.API.Controllers
         }
 
         [Route("{seasonId}/matchdays")]
-        public IHttpActionResult GetSeasonMatchdays(int seasonId)
+        public IHttpActionResult GetMatchdays(int seasonId)
         {
             if (!_brokenShoeLeagueRepository.SeasonExist(seasonId))
                 return NotFound();
@@ -108,7 +108,7 @@ namespace BrokenShoeLeague.Web.API.Controllers
         }
 
         [Route("{seasonId}/ranking")]
-        public IHttpActionResult GetSeasonRanking(int seasonId)
+        public IHttpActionResult GetRanking(int seasonId)
         {
             if (_brokenShoeLeagueRepository.SeasonExist(seasonId))
                 return NotFound();
@@ -119,7 +119,7 @@ namespace BrokenShoeLeague.Web.API.Controllers
         }
 
         [Route("{seasonId}/topScorers")]
-        public IHttpActionResult GetSeasonTopScorers(int seasonId)
+        public IHttpActionResult GetTopScorers(int seasonId)
         {
             if (!_brokenShoeLeagueRepository.SeasonExist(seasonId))
                 return NotFound();
@@ -128,7 +128,7 @@ namespace BrokenShoeLeague.Web.API.Controllers
         }
 
         [Route("topAssits/{seasonId}")]
-        public IHttpActionResult GetSeasonTopAssits(int seasonId)
+        public IHttpActionResult GetTopAssits(int seasonId)
         {
             if (!_brokenShoeLeagueRepository.SeasonExist(seasonId))
                 return NotFound();

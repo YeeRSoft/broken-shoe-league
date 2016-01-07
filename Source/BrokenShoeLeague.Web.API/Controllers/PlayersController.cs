@@ -46,8 +46,8 @@ namespace BrokenShoeLeague.Web.API.Controllers
             });
         }
 
-        // POST api/players
-        public IHttpActionResult Post(Player p)
+        [Route("")]
+        public IHttpActionResult Post([FromBody]Player p)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -57,7 +57,7 @@ namespace BrokenShoeLeague.Web.API.Controllers
             return Ok(p);
         }
 
-        // PUT api/players/5
+        [Route("")]
         public IHttpActionResult Put([FromUri]int id, [FromBody]PlayerViewModel player)
         {
             var currentPlayer = _brokenShoeLeagueRepository.GetPlayerById(id);
@@ -77,7 +77,7 @@ namespace BrokenShoeLeague.Web.API.Controllers
             return Ok(player);
         }
 
-        // DELETE api/players/5
+        [Route("")]
         public IHttpActionResult Delete(int id)
         {
             var player = _brokenShoeLeagueRepository.GetPlayerById(id);

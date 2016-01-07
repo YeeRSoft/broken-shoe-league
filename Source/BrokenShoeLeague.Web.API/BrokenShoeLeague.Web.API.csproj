@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -235,6 +236,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="BSL.Client\app\layout\" />
+    <Folder Include="BSL.Client\common\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>

@@ -236,6 +236,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="BSL.Client\app\layout\" />
+    <Folder Include="BSL.Client\assets\images\football-icons\" />
     <Folder Include="BSL.Client\common\" />
     <Folder Include="Scripts\" />
   </ItemGroup>

@@ -40,35 +40,13 @@
                 items: [
                     {
                         link: '',
-                        title: 'Matchday Results',
+                        title: 'Seasons',
                         icon: 'today'
                     },
                     {
                         link: '',
-                        title: 'Ranking',
+                        title: 'Achievements',
                         icon: 'view_list'
-                    }
-                ]
-            },
-            {
-                header: "User",
-                items: [
-                    { title: "Profile", link: "", icon: "perm_identity" },
-                    { title: "Messages", link: "", icon: "message" }
-                ]
-            },
-            {
-                header: "Manage",
-                items: [
-                    {
-                        link: '',
-                        title: 'Trash',
-                        icon: 'delete'
-                    },
-                    {
-                        link: 'showListBottomSheet($event)',
-                        title: 'Settings',
-                        icon: 'settings'
                     }
                 ]
             }

@@ -1,27 +1,26 @@
 ﻿md-toolbar h1 {
-  font-size: 1.250em;
-  font-weight: 400;
+    font-size: 1.250em;
+    font-weight: 400;
 }
 
 .avatar {
-  position: relative;
-  width: 128px;
-  height: 128px;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  display: inline-block;
-  overflow: hidden;
-  margin: 0px;
-  vertical-align: middle;
-  zoom:0.70;
-  transform: translateZ(0);
-  -webkit-transform: scale(0.70);
-  -moz-transform:scale(0.70);
+    position: relative;
+    width: 128px;
+    height: 128px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0px;
+    vertical-align: middle;
+    zoom: 0.70;
+    transform: translateZ(0);
+    -webkit-transform: scale(0.70);
+    -moz-transform: scale(0.70);
 }
 
 md-sidenav {
-fill: #737373;
-
+    fill: #737373;
 }
 
 .md-fab ng-md-icon, md-toolbar ng-md-icon {
@@ -33,17 +32,38 @@ fill: #737373;
 }
 
 ng-md-icon {
-position: relative;
-top: 5px;
+    position: relative;
+    top: 5px;
 }
 
 
-md-bottom-sheet  md-icon {
-  margin-right:20px;
+md-bottom-sheet md-icon {
+    margin-right: 20px;
 }
 
 span.name {
-  font-weight: bold;
-  font-size:1.1em;
-  padding-left:5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-left: 5px;
+}
+
+.user-avatar {
+    border-radius: 99%;
+}
+
+.top_menu_holder {
+    text-align: center;
+}
+
+.avatar_holder {
+    text-align: center;
+}
+
+.avatar_holder > svg {
+    display: inline;
+}
+
+.page-content {
+    /*background-color: #eee;*/
+    background-image: url(../images/background.jpg);
 }

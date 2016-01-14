@@ -198,12 +198,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BSL.Client\app\achievements\views\achievements.html" />
     <Content Include="BSL.Client\app\broken-shoe-league.constants.js" />
     <Content Include="BSL.Client\app\broken-shoe-league.route.js" />
     <Content Include="BSL.Client\app\broken-shoe-league.module.js" />
     <Content Include="BSL.Client\app\broken-shoe-league.config.js" />
     <Content Include="BSL.Client\app\components\user-avatar.directive.js" />
-    <Content Include="BSL.Client\app\home\HomeController.js" />
+    <Content Include="BSL.Client\app\gallery\views\gallery.html" />
+    <Content Include="BSL.Client\app\home\controllers\HomeController.js" />
+    <Content Include="BSL.Client\app\home\views\home.html" />
+    <Content Include="BSL.Client\app\news\views\newsList.html" />
+    <Content Include="BSL.Client\app\season\views\seasonList.html" />
     <Content Include="BSL.Client\assets\images\background.jpg" />
     <Content Include="BSL.Client\assets\images\LoGOLiGA.png" />
     <Content Include="BSL.Client\assets\styles\site.css" />
@@ -235,7 +240,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="BSL.Client\app\achievements\controllers\" />
+    <Folder Include="BSL.Client\app\gallery\controllers\" />
     <Folder Include="BSL.Client\app\layout\" />
+    <Folder Include="BSL.Client\app\news\controllers\" />
+    <Folder Include="BSL.Client\app\season\controllers\" />
+    <Folder Include="BSL.Client\assets\images\football-icons\" />
     <Folder Include="BSL.Client\common\" />
     <Folder Include="Scripts\" />
   </ItemGroup>

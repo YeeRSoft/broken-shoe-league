@@ -1,4 +1,5 @@
-﻿(function() {
+﻿(function () {
+    "use strict";
     angular
-        .module('eeBrokenShoeLeague', ['ngMaterial', 'ngMdIcons', 'ngRoute']);
+        .module('eeBrokenShoeLeague', ['ngMaterial', 'ngMdIcons','ui.router']);
 })()

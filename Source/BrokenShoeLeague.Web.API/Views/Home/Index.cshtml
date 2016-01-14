@@ -21,7 +21,7 @@
             <span ng-repeat="groupMenu in homeCtrl.menu">
                 <md-subheader>{{groupMenu.header}}</md-subheader>
                 <md-item md-ink-ripple ng-repeat="menuItem in groupMenu.items">
-                    <a>
+                    <a ui-sref="{{menuItem.state}}">
                         <md-item-content layout="row" layout-align="start center">
                             <div class="submenu_link" ng-click="homeCtrl.go(menuItem.link)">
                                 <ng-md-icon icon="{{menuItem.icon}}"></ng-md-icon>
@@ -62,7 +62,7 @@
 
     <!-- Angular related scripts -->
     <script src="~/bower_components/angular/angular.js"></script>
-    <script src="~/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="~/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="~/bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="~/bower_components/angular-aria/angular-aria.min.js"></script>
     <script src="~/bower_components/angular-material/angular-material.min.js"></script>
@@ -75,12 +75,11 @@
     <script src="~/BSL.Client/app/broken-shoe-league.constants.js"></script>
 
     <!-- Services -->
-
     <!-- directives -->
     <script src="~/BSL.Client/app/components/user-avatar.directive.js"></script>
 
     <!-- Controllers Scripts -->
-    <script src="~/BSL.Client/app/home/HomeController.js"></script>
+    <script src="~/BSL.Client/app/home/Controllers/HomeController.js"></script>
 
 </body>
 </html>

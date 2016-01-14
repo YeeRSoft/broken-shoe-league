@@ -21,17 +21,20 @@
                     {
                         link: 'dashboard',
                         title: 'Dashboard',
-                        icon: 'dashboard'
+                        icon: 'dashboard',
+                        state: 'home'
                     },
                     {
                         link: '',
                         title: 'Gallery',
-                        icon: 'view_carousel'
+                        icon: 'view_carousel',
+                        state: 'gallery'
                     },
                     {
                         link: '',
                         title: 'News',
-                        icon: 'new_releases'
+                        icon: 'new_releases',
+                        state: 'news'
                     }
                 ]
             },
@@ -40,35 +43,15 @@
                 items: [
                     {
                         link: '',
-                        title: 'Matchday Results',
-                        icon: 'today'
+                        title: 'Seasons',
+                        icon: 'today',
+                        state: 'seasons'
                     },
                     {
                         link: '',
-                        title: 'Ranking',
-                        icon: 'view_list'
-                    }
-                ]
-            },
-            {
-                header: "User",
-                items: [
-                    { title: "Profile", link: "", icon: "perm_identity" },
-                    { title: "Messages", link: "", icon: "message" }
-                ]
-            },
-            {
-                header: "Manage",
-                items: [
-                    {
-                        link: '',
-                        title: 'Trash',
-                        icon: 'delete'
-                    },
-                    {
-                        link: 'showListBottomSheet($event)',
-                        title: 'Settings',
-                        icon: 'settings'
+                        title: 'Achievements',
+                        icon: 'view_list',
+                        state: 'achievements'
                     }
                 ]
             }

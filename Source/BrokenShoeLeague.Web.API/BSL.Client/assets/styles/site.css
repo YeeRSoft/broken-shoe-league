@@ -1,81 +1,49 @@
-﻿
-md-content {
-  /*background-color: #eee;*/
-  background-image: url(../images/background.jpg);
+﻿md-toolbar h1 {
+  font-size: 1.250em;
+  font-weight: 400;
 }
 
-md-card {
-    background-color: #fff;
-    h2: first-of-type;
-
-{
-    margin-top: 0;
-}
-
-}
-
-md-toolbar {
-    .md-button.md-default-theme;
-
-{
-    border-radius: 99%;
-}
-
-}
-
-h2 {
-    font-weight: 400;
-}
-
-.md-toolbar-tools-bottom {
-    font-size: small;
-    & :last-child;
-
-{
-    opacity: 0.8;
-}
-
-}
-
-md-toolbar:not(.md-hue-1),
-.md-fab {
-    fill: #fff;
+.avatar {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0px;
+  vertical-align: middle;
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform:scale(0.70);
 }
 
 md-sidenav {
-    fill: #737373;
-    ng-md-icon;
-
-{
-    position: relative;
-    top: 5px;
-}
+fill: #737373;
 
 }
 
-.user-avatar {
-    border-radius: 99%;
+.md-fab ng-md-icon, md-toolbar ng-md-icon {
+    fill: white;
 }
 
-.top_menu_holder {
-    text-align: center;
+.md-fab-action-item ng-md-icon {
+    fill: black;
 }
 
-.avatar_holder {
-    text-align: center;
+ng-md-icon {
+position: relative;
+top: 5px;
 }
 
-    .avatar_holder > svg {
-        display: inline;
-    }
 
-.submenu_link {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+md-bottom-sheet  md-icon {
+  margin-right:20px;
 }
 
-    .submenu_link:hover {
-        cursor: pointer;
-    }
+span.name {
+  font-weight: bold;
+  font-size:1.1em;
+  padding-left:5px;
+}

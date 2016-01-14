@@ -26,7 +26,13 @@
             })
             .state("achievements", {
                 url: "/achievements",
-                templateUrl: "BSL.Client/app/achievements/views/achievements.html"
+                templateUrl: "BSL.Client/app/achievements/views/achievements.html",
+                controller: "AchievementsDetailsCtrl as vm",
+                resolve:{
+                    achievements : function() {
+                        return [];
+                    }
+                }
             });
     }
-})()
+})();

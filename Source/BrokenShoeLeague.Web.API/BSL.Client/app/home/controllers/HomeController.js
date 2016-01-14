@@ -1,11 +1,11 @@
 ﻿(function() {
     angular
         .module('eeBrokenShoeLeague')
-        .controller('HomeController', homeCtroller);
+        .controller('HomeController', homeController);
 
-    homeCtroller.$inject = ['$mdBottomSheet', '$mdSidenav', '$mdDialog', '$location'];
+    homeController.$inject = ['$mdBottomSheet', '$mdSidenav', '$mdDialog', '$location'];
 
-    function homeCtroller($mdBottomSheet, $mdSidenav, $mdDialog, $location) {
+    function homeController($mdBottomSheet, $mdSidenav, $mdDialog, $location) {
         var vm = this;
 
         vm.go = function (url) { $location.path(url); }
@@ -19,19 +19,16 @@
                 header: '',
                 items: [
                     {
-                        link: 'dashboard',
                         title: 'Dashboard',
                         icon: 'dashboard',
                         state: 'home'
                     },
                     {
-                        link: '',
                         title: 'Gallery',
                         icon: 'view_carousel',
                         state: 'gallery'
                     },
                     {
-                        link: '',
                         title: 'News',
                         icon: 'new_releases',
                         state: 'news'

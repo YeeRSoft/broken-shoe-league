@@ -21,17 +21,20 @@
                     {
                         link: 'dashboard',
                         title: 'Dashboard',
-                        icon: 'dashboard'
+                        icon: 'dashboard',
+                        state: 'home'
                     },
                     {
                         link: '',
                         title: 'Gallery',
-                        icon: 'view_carousel'
+                        icon: 'view_carousel',
+                        state: 'gallery'
                     },
                     {
                         link: '',
                         title: 'News',
-                        icon: 'new_releases'
+                        icon: 'new_releases',
+                        state: 'news'
                     }
                 ]
             },
@@ -41,12 +44,14 @@
                     {
                         link: '',
                         title: 'Seasons',
-                        icon: 'today'
+                        icon: 'today',
+                        state: 'seasons'
                     },
                     {
                         link: '',
                         title: 'Achievements',
-                        icon: 'view_list'
+                        icon: 'view_list',
+                        state: 'achievements'
                     }
                 ]
             }

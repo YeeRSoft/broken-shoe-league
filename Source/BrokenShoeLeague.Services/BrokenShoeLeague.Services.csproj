@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Achievement\AchivementProviderService.cs" />
+    <Compile Include="Achievement\IAchivementProviderService.cs" />
+    <Compile Include="Achievement\Models\AchievementWrapper.cs" />
     <Compile Include="Helpers\Common.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seasons\ISeasonStatsProvider.cs" />

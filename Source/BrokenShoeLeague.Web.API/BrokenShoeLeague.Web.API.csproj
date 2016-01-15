@@ -184,6 +184,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AchievementsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Controllers\SeasonsController.cs" />
@@ -211,10 +212,97 @@
     <Content Include="BSL.Client\app\news\views\newsList.html" />
     <Content Include="BSL.Client\app\season\views\seasonList.html" />
     <Content Include="BSL.Client\assets\images\background.jpg" />
+    <Content Include="BSL.Client\assets\images\football-icons\ambulance15.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\athlete5.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\athletic.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\ball21.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\black367.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\chronometer14.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\chronometer15.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\chronometer16.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\dark53.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\empty30.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\first39.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\football149.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\football150.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\football151.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\goal3.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\goal4.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\hand137.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\hand138.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\hand139.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\man426.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\medal53.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\planning1.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\running33.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\scores.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer47.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer48.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer49.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer50.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer51.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer52.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer53.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer54.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer55.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer56.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer57.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer58.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer59.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer60.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer61.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer62.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer63.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer64.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer65.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer66.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer67.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer68.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer69.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer70.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer71.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer72.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer73.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer74.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer75.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer76.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\soccer77.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sport12.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sportive44.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sportive45.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sportive46.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sportive47.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sportive48.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sportive49.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sportive50.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sportive51.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sportive52.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sportive53.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sportive54.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sports33.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sports34.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\sports35.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\stadium1.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\star153.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\striped20.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\timer34.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\triumph.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\trophy53.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\tshirt19.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\two294.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\two295.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\two296.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\two297.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\whistle11.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\whistle12.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\whitesoccer.svg" />
+    <Content Include="BSL.Client\assets\images\football-icons\yellow.svg" />
     <Content Include="BSL.Client\assets\images\LoGOLiGA.png" />
     <Content Include="BSL.Client\assets\styles\app.css" />
     <Content Include="BSL.Client\assets\styles\site.css" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="BSL.Client\common\services\achievements-service-mock.js" />
+    <Content Include="BSL.Client\common\services\achievements-service.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -246,8 +334,6 @@
     <Folder Include="BSL.Client\app\layout\" />
     <Folder Include="BSL.Client\app\news\controllers\" />
     <Folder Include="BSL.Client\app\season\controllers\" />
-    <Folder Include="BSL.Client\assets\images\football-icons\" />
-    <Folder Include="BSL.Client\common\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +359,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bower.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BSL.Client\common\services\common.services.js" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

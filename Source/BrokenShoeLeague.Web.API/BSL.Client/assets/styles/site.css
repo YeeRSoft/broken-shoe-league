@@ -36,6 +36,9 @@ ng-md-icon {
     top: 5px;
 }
 
+.md-toolbar-tools-bottom {
+    font-size: small;
+}
 
 md-bottom-sheet md-icon {
     margin-right: 20px;

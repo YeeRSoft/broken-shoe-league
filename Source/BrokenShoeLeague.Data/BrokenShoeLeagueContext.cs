@@ -16,7 +16,7 @@ namespace BrokenShoeLeague.Data
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Matchday> Matchdays { get; set; }
         public DbSet<Player> Players { get; set; }
-        public DbSet<Achievment> Achievments { get; set; }
+        public DbSet<PlayerAchievement> Achievments { get; set; }
         public DbSet<Season> Seasons { get; set; }
         public DbSet<PlayerRecord> PlayerRecords { get; set; }
         public DbSet<ImageCarousel> ImageCarousels { get; set; }

@@ -2,7 +2,7 @@
 
 namespace BrokenShoeLeague.Domain
 {
-    public class Achievment
+    public class PlayerAchievement
     {
         public int Id { get; set; }
         [Required]

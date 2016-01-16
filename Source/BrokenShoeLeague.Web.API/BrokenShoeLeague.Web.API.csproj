@@ -298,6 +298,7 @@
     <Content Include="BSL.Client\assets\images\football-icons\whitesoccer.svg" />
     <Content Include="BSL.Client\assets\images\football-icons\yellow.svg" />
     <Content Include="BSL.Client\assets\images\LoGOLiGA.png" />
+    <Content Include="BSL.Client\assets\js\angular-mocks.js" />
     <Content Include="BSL.Client\assets\styles\app.css" />
     <Content Include="BSL.Client\assets\styles\site.css" />
     <Content Include="Areas\HelpPage\HelpPage.css" />

@@ -6,6 +6,7 @@
             'ngMaterial',
             'ngMdIcons',
             'ui.router',
-            'achievementServiceMock'
+            'achievementServiceMock',
+            'playersServiceMock'
             ]);
 })()

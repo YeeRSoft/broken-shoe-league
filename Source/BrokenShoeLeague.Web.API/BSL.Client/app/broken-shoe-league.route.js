@@ -10,7 +10,7 @@
         $stateProvider
             .state("home", {
                 url: "/",
-                templateUrl: "BSL.Client/app/home/views/home.html"
+                templateUrl: "BSL.Client/app/home/views/home.html",
             })
             .state("seasons", {
                 url: "/seasons",
@@ -27,12 +27,7 @@
             .state("achievements", {
                 url: "/achievements",
                 templateUrl: "BSL.Client/app/achievements/views/achievements.html",
-                controller: "AchievementsDetailsCtrl as vm",
-                resolve:{
-                    achievements : function() {
-                        return [];
-                    }
-                }
+                controller: "AchievementsDetailsCtrl as vm"
             });
     }
 })();

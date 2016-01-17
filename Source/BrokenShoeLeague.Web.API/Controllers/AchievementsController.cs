@@ -24,7 +24,8 @@ namespace BrokenShoeLeague.Web.API.Controllers
         [Route("")]
         public IHttpActionResult GetAchievements()
         {
-            return Ok(_achivementProviderService.GetAchievements());
+            var achievements = _achivementProviderService.GetAchievements().ToArray();
+            return Ok(achievements);
         }
     }
 }

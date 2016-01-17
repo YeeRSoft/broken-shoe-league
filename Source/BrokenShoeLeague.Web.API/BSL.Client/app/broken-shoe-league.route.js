@@ -22,7 +22,8 @@
             })
             .state("news", {
                 url: "/news",
-                templateUrl: "BSL.Client/app/news/views/newsList.html"
+                templateUrl: "BSL.Client/app/news/views/newsList.html",
+                controller: "NewsCtrl as vm"
             })
             .state("achievements", {
                 url: "/achievements",

@@ -302,6 +302,8 @@
     <Content Include="BSL.Client\assets\styles\app.css" />
     <Content Include="BSL.Client\assets\styles\site.css" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="BSL.Client\common\services\players-service.js" />
+    <Content Include="BSL.Client\common\services\players-service-mock.js" />
     <Content Include="BSL.Client\common\services\achievements-service-mock.js" />
     <Content Include="BSL.Client\common\services\achievements-service.js" />
     <Content Include="favicon.ico" />

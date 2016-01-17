@@ -27,7 +27,19 @@
             .state("achievements", {
                 url: "/achievements",
                 templateUrl: "BSL.Client/app/achievements/views/achievements.html",
-                controller: "AchievementsDetailsCtrl as vm"
+                controller: "AchievementsDetailsCtrl as vm",
+                resolve: {
+                    AchievementService: "AchievementService",
+                    PlayersService: "PlayersService",
+
+                    achievements: function(AchievementService) {
+                        return AchievementService.GetAchievements();
+                    },
+
+                    players: function(PlayersService) {
+                        return PlayersService.GetPlayers();
+                    }
+                }
             });
     }
 })();

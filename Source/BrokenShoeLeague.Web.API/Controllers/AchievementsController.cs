@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using BrokenShoeLeague.Domain.Repositories;
 using BrokenShoeLeague.Services.Achievement;
+using BrokenShoeLeague.Services.Achievement.Models;
 
 namespace BrokenShoeLeague.Web.API.Controllers
 {
@@ -26,6 +27,13 @@ namespace BrokenShoeLeague.Web.API.Controllers
         {
             var achievements = _achivementProviderService.GetAchievements().ToArray();
             return Ok(achievements);
+        }
+
+        [Route("player/{playerName}")]
+        public IHttpActionResult GetPlayerAchievements(string playerName)
+        {
+            var player = _brokenShoeLeagueRepository.GetPlayerByName(playerName);
+            return Ok(player.PlayerAchievements.Select(pa => new AchievementWrapper(pa.Name, pa.IconName)));
         }
     }
 }

@@ -1,27 +1,74 @@
 ﻿<div ng-cloak>
     <md-content>
         <md-tabs md-dynamic-height md-border-bottom>
-            <md-tab label="one">
-                <md-content class="md-padding">
-                    <h1 class="md-display-2">Tab One</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
-                </md-content>
+            <md-tab label="All Achievements">
+
+            <md-content class="md-padding">
+                
+                    <md-grid-list md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
+                                  md-row-height-gt-md="1:1" md-row-height="4:3"
+                                  md-gutter="8px" md-gutter-gt-sm="4px"
+                                  class="gridListdemoDynamicTiles">
+                        <md-grid-tile ng-repeat="item in vm.AchievementList"
+                                      md-rowspan="1"
+                                      md-colspan="1"
+                                      md-colspan-sm="1"
+                                      class="gray">
+                            <md-icon md-svg-src="BSL.Client/assets/images/football-icons/{{item.ImmageUrl}}" style="width: 128px; height: 128px;">
+                                <md-tooltip md-direction="top">
+                                    {{item.Description}}
+                                </md-tooltip>
+                            </md-icon>
+                            <md-grid-tile-footer>
+                                <h3>{{item.Name}}</h3>
+                            </md-grid-tile-footer>
+                        </md-grid-tile>
+                    </md-grid-list>
+            </md-content>
+                    
+               
             </md-tab>
-            <md-tab label="two">
+            <md-tab label="Check Players">
                 <md-content class="md-padding">
                     <h1 class="md-display-2">Tab Two</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
-                    <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
-                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-                </md-content>
-            </md-tab>
-            <md-tab label="three">
-                <md-content class="md-padding">
-                    <h1 class="md-display-2">Tab Three</h1>
-                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
                 </md-content>
             </md-tab>
         </md-tabs>
     </md-content>
 </div>
+
+
+
+<!--<div ng-controller="DemoCtrl" ng-cloak layout="column" layout-margin ng-cloak>
+    <p>The simplest way to display a single SVG icon is by referencing it by URL:</p>
+    <p>
+        <md-icon md-svg-src="{{ insertDriveIconURL }}"
+                 aria-label="Insert Drive Icon">
+        </md-icon>
+    </p>
+    <p>Style the icon size and color with CSS:</p>
+    <p>
+        <md-icon md-svg-src="img/icons/cake.svg" class="s24" aria-label="Cake"></md-icon>
+        <md-icon md-svg-src="{{ getAndroid() }}" class="s36" aria-label="Android "></md-icon>
+        <md-icon md-svg-src="img/icons/addShoppingCart.svg" class="s48" aria-label="Cart"></md-icon>
+    </p>
+</div>-->
+
+
+<!--<div ng-controller="gridListDemoCtrl as vm" flex ng-cloak>
+    <md-grid-list md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
+                  md-row-height-gt-md="1:1" md-row-height="4:3"
+                  md-gutter="8px" md-gutter-gt-sm="4px">
+        <md-grid-tile ng-repeat="tile in vm.tiles"
+                      md-rowspan="{{tile.span.row}}"
+                      md-colspan="{{tile.span.col}}"
+                      md-colspan-sm="1"
+                      ng-class="tile.background">
+            <md-icon md-svg-icon="{{tile.icon}}"></md-icon>
+            <md-grid-tile-footer><h3>{{tile.title}}</h3></md-grid-tile-footer>
+        </md-grid-tile>
+    </md-grid-list>
+</div>-->
+
 

@@ -2,10 +2,11 @@
 <head>
     <link rel="stylesheet" href="~/bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="~/BSL.Client/assets/styles/site.css">
+    <link rel="stylesheet" href="~/BSL.Client/assets/styles/app.css">
     <title>Broken Shoe League</title>
 </head>
 <body layout="row" ng-controller="HomeController as homeCtrl">
-    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" style="min-width:200px" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" style="min-width: 200px" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
         <md-toolbar class="md-tall md-hue-2 top_menu_holder">
             <span flex></span>
             <div layout="column" class="md-toolbar-tools-bottom inset">
@@ -14,28 +15,26 @@
                 </div>
                 <span></span>
                 <div>Firstname Lastname</div>
-                <div><b>email@domainname.com</b></div>
+                <div>
+                    <b>email@domainname.com</b>
+                </div>
             </div>
         </md-toolbar>
         <md-list>
             <span ng-repeat="groupMenu in homeCtrl.menu">
                 <md-subheader>{{groupMenu.header}}</md-subheader>
-                <md-item md-ink-ripple ng-repeat="menuItem in groupMenu.items">
-                    <a ui-sref="{{menuItem.state}}">
-                        <md-item-content layout="row" layout-align="start center">
-                            <div class="submenu_link" ng-click="homeCtrl.go(menuItem.link)">
-                                <ng-md-icon icon="{{menuItem.icon}}"></ng-md-icon>
-                            </div>
-                            <div class="submenu_link" ng-click="homeCtrl.go(menuItem.link)">
-                                {{menuItem.title}}
-                            </div>
-                        </md-item-content>
-                    </a>
-                </md-item>
+                <md-list-item ng-repeat="menuItem in groupMenu.items">
+                    <md-button ui-sref="{{menuItem.state}}">
+                        <ng-md-icon icon="{{menuItem.icon}}"></ng-md-icon>
+                        {{menuItem.title}}
+                    </md-button>
+                </md-list-item>
                 <md-divider></md-divider>
             </span>
         </md-list>
     </md-sidenav>
+
+
     <div layout="column" class="relative" layout-fill role="main">
         <md-toolbar>
             <div class="md-toolbar-tools">
@@ -54,7 +53,7 @@
                 </md-button>
             </div>
         </md-toolbar>
-        <md-content flex md-scroll-y>
+        <md-content flex md-scroll-y class="page-content">
             <ui-view layout="column" layout-fill layout-padding>
             </ui-view>
         </md-content>
@@ -62,7 +61,9 @@
 
     <!-- Angular related scripts -->
     <script src="~/bower_components/angular/angular.js"></script>
+    <script src="~/bower_components/angular-resource/angular-resource.js"></script>
     <script src="~/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="~/bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="~/bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="~/bower_components/angular-aria/angular-aria.min.js"></script>
     <script src="~/bower_components/angular-material/angular-material.min.js"></script>
@@ -75,11 +76,16 @@
     <script src="~/BSL.Client/app/broken-shoe-league.constants.js"></script>
 
     <!-- Services -->
+    <script src="~/BSL.Client/common/services/common.services.js"></script>
+    <script src="~/BSL.Client/common/services/achievements-service.js"></script>
+    <script src="~/BSL.Client/common/services/achievements-service-mock.js"></script>
+
     <!-- directives -->
     <script src="~/BSL.Client/app/components/user-avatar.directive.js"></script>
 
     <!-- Controllers Scripts -->
-    <script src="~/BSL.Client/app/home/Controllers/HomeController.js"></script>
+    <script src="~/BSL.Client/app/home/controllers/homeController.js"></script>
+    <script src="~/BSL.Client/app/achievements/controllers/achievementsDetailsCtrl.js"></script>
 
 </body>
 </html>

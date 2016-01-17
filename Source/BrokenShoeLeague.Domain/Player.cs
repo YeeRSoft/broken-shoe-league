@@ -15,7 +15,8 @@ namespace BrokenShoeLeague.Domain
         [Required]
         public string Name { get; set; }
         public string  ImageProfileUrl { get; set; }
-        public virtual IList<PlayerRecord> PlayerRecords { get; set; }
+        public IList<PlayerRecord> PlayerRecords { get; set; }
+        public IList<PlayerAchievement> PlayerAchievements { get; set; }
         public bool Enabled { get; set; }
         public int TopPlayer
         {

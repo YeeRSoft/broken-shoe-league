@@ -68,6 +68,11 @@ namespace BrokenShoeLeague.Data
             return Players.Find(id);
         }
 
+        public Player GetPlayerByName(string name)
+        {
+            return Players.FirstOrDefault(x => x.Name == name);
+        }
+
         public void RemovePlayer(Player player)
         {
             Players.Remove(player);

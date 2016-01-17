@@ -17,6 +17,7 @@ namespace BrokenShoeLeague.Domain.Repositories
         //Player
         void CreatePlayer(Player newPlayer);
         Player GetPlayerById(int id);
+        Player GetPlayerByName(string name);
         void RemovePlayer(Player player);
         IQueryable<Player> GetAllPlayers();
         bool PlayerExist(int playerId);

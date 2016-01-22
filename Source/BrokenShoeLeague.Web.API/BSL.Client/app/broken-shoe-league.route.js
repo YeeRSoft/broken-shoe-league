@@ -23,7 +23,14 @@
             .state("news", {
                 url: "/news",
                 templateUrl: "BSL.Client/app/news/views/newsList.html",
-                controller: "NewsCtrl as vm"
+                controller: "NewsCtrl as vm",
+                resolve: {
+                    NewsService: "NewsService",
+
+                    news: function(NewsService) {
+                        return NewsService.GetNews();
+                    }
+                }
             })
             .state("achievements", {
                 url: "/achievements",

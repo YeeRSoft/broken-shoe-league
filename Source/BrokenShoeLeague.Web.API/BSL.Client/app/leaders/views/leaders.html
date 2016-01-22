@@ -1,0 +1,61 @@
+﻿<div ng-cloak>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Ranking">
+                <md-content class="md-padding">
+                    <md-content>
+                        <!--<md-toolbar class="md-table-toolbar md-default">
+                            <div class="md-toolbar-tools">
+                                <span>Player's Ranking</span>
+                            </div>
+                        </md-toolbar>-->
+
+                        <!-- exact table from live demo -->
+                        <md-table-container>
+                            <table md-table>
+                                <thead md-head md-order="vm.query.order" md-on-reorder="vm.onReorder">
+                                    <tr md-row>
+                                        <th md-column><span></span></th>
+                                        <th md-column md-numeric md-order-by="name"><span>Name</span></th>
+                                        <th md-column md-numeric mddesc md-order-by="performance"><span>Performance</span></th>
+                                        <th md-column md-numeric md-order-by="playedGames"><span>PG</span></th>
+                                        <th md-column md-numeric md-order-by="winGames"><span>Win</span></th>
+                                        <th md-column md-numeric md-order-by="lostGames"><span>Lost</span></th>
+                                        <th md-column md-numeric md-order-by="tiedGames"><span>Tied</span></th>
+                                        <th md-column md-numeric md-order-by="goals"><span>Goals</span></th>
+                                        <th md-column md-numeric md-order-by="assists"><span>Assists</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody md-body>
+                                    <tr md-row md-select="dessert" md-select-id="{{dessert.name}}" md-auto-select ng-repeat="new in vm.NewsList">
+                                        <td md-cell><ng-md-icon icon="{{new.ImgUrl}}"></ng-md-icon></td>
+                                        <td md-cell>some name</td>
+                                        <td md-cell>0.560</td>
+                                        <td md-cell>68</td>
+                                        <td md-cell>30</td>
+                                        <td md-cell>25</td>
+                                        <td md-cell>14</td>
+                                        <td md-cell>75</td>
+                                        <td md-cell>61</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </md-table-container>
+
+                        <md-table-pagination md-limit="query.limit" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="onPaginate" md-page-select></md-table-pagination>
+                    </md-content>
+                </md-content>
+            </md-tab>
+            <md-tab label="Goals">
+                <md-content class="md-padding">
+                    
+                </md-content>
+            </md-tab>
+            <md-tab label="Assits">
+                <md-content class="md-padding">
+
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>

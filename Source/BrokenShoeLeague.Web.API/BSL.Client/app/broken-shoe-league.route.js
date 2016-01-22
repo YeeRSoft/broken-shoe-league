@@ -14,7 +14,7 @@
             })
             .state("leaders", {
                 url: "/leaders",
-                templateUrl: "BSL.Client/app/leader/views/leaders.html",
+                templateUrl: "BSL.Client/app/leaders/views/leaders.html",
                 controller: "LeadersCtrl as vm"
             })
             .state("seasons", {

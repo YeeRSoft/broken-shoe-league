@@ -4,12 +4,13 @@
         .controller("NewsCtrl",
             newsCtrl);
 
-    newsCtrl.inject = [];
+    newsCtrl.inject = ["news"];
 
-    function newsCtrl() {
+    function newsCtrl(news) {
 
         var vm = this;
 
+        vm.NewsList = news;
     }
 
 }());

@@ -40,6 +40,12 @@
                 items: [
                     {
                         link: '',
+                        title: 'Leaders',
+                        icon: 'view_list',
+                        state: 'leaders'
+                    },
+                    {
+                        link: '',
                         title: 'Seasons',
                         icon: 'today',
                         state: 'seasons'
@@ -47,7 +53,7 @@
                     {
                         link: '',
                         title: 'Achievements',
-                        icon: 'view_list',
+                        icon: 'done_all',
                         state: 'achievements'
                     }
                 ]

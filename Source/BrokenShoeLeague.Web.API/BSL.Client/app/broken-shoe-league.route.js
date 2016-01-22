@@ -12,6 +12,11 @@
                 url: "/",
                 templateUrl: "BSL.Client/app/home/views/home.html",
             })
+            .state("leaders", {
+                url: "/leaders",
+                templateUrl: "BSL.Client/app/leader/views/leaders.html",
+                controller: "LeadersCtrl as vm"
+            })
             .state("seasons", {
                 url: "/seasons",
                 templateUrl: "BSL.Client/app/season/views/seasonList.html"

@@ -209,6 +209,8 @@
     <Content Include="BSL.Client\app\gallery\views\gallery.html" />
     <Content Include="BSL.Client\app\home\controllers\homeController.js" />
     <Content Include="BSL.Client\app\home\views\home.html" />
+    <Content Include="BSL.Client\app\leaders\controller\leadersCtrl.js" />
+    <Content Include="BSL.Client\app\leaders\views\leaders.html" />
     <Content Include="BSL.Client\app\news\controllers\newsCtrl.js" />
     <Content Include="BSL.Client\app\news\views\newsList.html" />
     <Content Include="BSL.Client\app\season\views\seasonList.html" />
@@ -301,7 +303,6 @@
     <Content Include="BSL.Client\assets\images\LoGOLiGA.png" />
     <Content Include="BSL.Client\assets\js\angular-mocks.js" />
     <Content Include="BSL.Client\assets\styles\app.css" />
-    <Content Include="BSL.Client\assets\styles\md-data-table-style.css" />
     <Content Include="BSL.Client\assets\styles\site.css" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="BSL.Client\common\services\news-service.js" />

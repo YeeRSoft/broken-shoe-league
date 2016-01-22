@@ -3,6 +3,7 @@ using BrokenShoeLeague.Domain.Repositories;
 using BrokenShoeLeague.Services.Seasons;
 using Microsoft.Practices.Unity;
 using System.Web.Http;
+using BrokenShoeLeague.Services.Achievement;
 using BrokenShoeLeague.Services.Importers;
 using Unity.WebApi;
 
@@ -17,6 +18,8 @@ namespace BrokenShoeLeague.Web.API
             container.RegisterType<IBrokenShoeLeagueRepository, BrokenShoeLeagueContext>();
             container.RegisterType<ISeasonStatsProvider, SeasonStatsProvider>();
             container.RegisterType<IStatsImporter, StatsImporter>();
+            container.RegisterType<IAchivementProviderService, AchivementProviderService>();
+            
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

@@ -47,14 +47,17 @@
     <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Achievment.cs" />
+    <Compile Include="DefaultAchievements\MatchdayLeader.cs" />
+    <Compile Include="Enums\AchievementType.cs" />
+    <Compile Include="DefaultAchievements\BaseAchievement.cs" />
+    <Compile Include="PlayerAchievement.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="ImageCarousel.cs" />
     <Compile Include="Matchday.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IBrokenShoeLeagueRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IBrokenShoeLeagueRepository.cs" />
     <Compile Include="Season.cs" />
     <Compile Include="UserProfile.cs" />
     <Compile Include="Utils.cs" />
@@ -64,6 +67,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\Common\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

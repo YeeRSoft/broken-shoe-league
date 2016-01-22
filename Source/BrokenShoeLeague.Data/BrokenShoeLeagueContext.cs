@@ -16,7 +16,7 @@ namespace BrokenShoeLeague.Data
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Matchday> Matchdays { get; set; }
         public DbSet<Player> Players { get; set; }
-        public DbSet<Achievment> Achievments { get; set; }
+        public DbSet<PlayerAchievement> Achievments { get; set; }
         public DbSet<Season> Seasons { get; set; }
         public DbSet<PlayerRecord> PlayerRecords { get; set; }
         public DbSet<ImageCarousel> ImageCarousels { get; set; }
@@ -66,6 +66,11 @@ namespace BrokenShoeLeague.Data
         public Player GetPlayerById(int id)
         {
             return Players.Find(id);
+        }
+
+        public Player GetPlayerByName(string name)
+        {
+            return Players.FirstOrDefault(x => x.Name == name);
         }
 
         public void RemovePlayer(Player player)

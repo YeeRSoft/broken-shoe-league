@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="~/bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="~/BSL.Client/assets/styles/site.css">
     <link rel="stylesheet" href="~/BSL.Client/assets/styles/app.css">
+
     <title>Broken Shoe League</title>
 </head>
 <body layout="row" ng-controller="HomeController as homeCtrl">
@@ -69,6 +70,11 @@
     <script src="~/bower_components/angular-material/angular-material.min.js"></script>
     <script src="~/bower_components/angular-material-icons/angular-material-icons.min.js"></script>
 
+    <link href="~/bower_components/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="~/bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
+
+
     <!-- Main App -->
     <script src="~/BSL.Client/app/broken-shoe-league.module.js"></script>
     <script src="~/BSL.Client/app/broken-shoe-league.config.js"></script>
@@ -79,10 +85,12 @@
     <script src="~/BSL.Client/common/services/common.services.js"></script>
     <script src="~/BSL.Client/common/services/achievements-service.js"></script>
     <script src="~/BSL.Client/common/services/players-service.js"></script>
+    <script src="~/BSL.Client/common/services/news-service.js"></script>
 
     <!-- Services Mocks-->
     <script src="~/BSL.Client/common/services/achievements-service-mock.js"></script>
     <script src="~/BSL.Client/common/services/players-service-mock.js"></script>
+    <script src="~/BSL.Client/common/services/news-service-mock.js"></script>
 
     <!-- directives -->
     <script src="~/BSL.Client/app/components/user-avatar.directive.js"></script>
@@ -90,6 +98,7 @@
     <!-- Controllers Scripts -->
     <script src="~/BSL.Client/app/home/controllers/homeController.js"></script>
     <script src="~/BSL.Client/app/achievements/controllers/achievementsDetailsCtrl.js"></script>
+    <script src="~/BSL.Client/app/news/controllers/newsCtrl.js"></script>
 
 </body>
 </html>

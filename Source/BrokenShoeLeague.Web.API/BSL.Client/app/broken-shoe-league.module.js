@@ -5,8 +5,10 @@
             'common.services',
             'ngMaterial',
             'ngMdIcons',
+            'md.data.table',
             'ui.router',
             'achievementServiceMock',
+            'newsServiceMock',
             'playersServiceMock'
             ]);
 })()
